@@ -313,7 +313,7 @@
 </center>
   
 <center>
-    <br><button id="guardar"onclick="window.print()">GUARDAR PDF</button><br>
+    <br><button id="guardar"onclick="window.print()">GUARDAR IMPRESION</button><br>
     </button>
 </center>
 </div>
@@ -519,11 +519,27 @@ function previewPhoto() {
 
 
 
-             function bienestarinstitucional() {
-  window.print();
-}
-
     
+
+ const nameInput = document.getElementById('name');
+        const guardarButton = document.getElementById('guardar');
+
+        nameInput.addEventListener('input', function() {
+            guardarButton.disabled = nameInput.value.trim() === '';
+        });
+
+        function verificarDatos(event) {
+            if (nameInput.value.trim() === '') {
+                event.preventDefault();
+                alert('Por favor completa los datos antes de imprimir.');
+            } else {
+                bienestarinstitucional();
+            }
+        }
+
+        function bienestarinstitucional() {
+            window.print();
+        }
 
                 
 </script>
