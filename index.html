@@ -478,11 +478,18 @@ transform-origin: top left;
   
 }
 
+
+
 @media print {
-    input[type="file"], button,.file-input-label,#guardar {
+    body {
+        background-image: none !important;
+    }
+    input[type="file"], button, .file-input-label, #guardar {
         display: none;
     } 
 }
+
+    
 </style>
 </body>
 </html>
