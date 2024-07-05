@@ -313,7 +313,7 @@
 </center>
   
 <center>
-    <br><button id="guardar"onclick="window.print()">GUARDAR IMPRESION</button><br>
+  <button id="guardar" onclick="verificarDatos(event)">GUARDAR IMPRESION</button>
     </button>
 </center>
 </div>
@@ -531,7 +531,7 @@ function previewPhoto() {
         function verificarDatos(event) {
             if (nameInput.value.trim() === '') {
                 event.preventDefault();
-                alert('Por favor completa los datos antes de imprimir.');
+                alert('POR FAVOR COMPLETA TUS DATOS ANTES DE IMPRIMIR.');
             } else {
                 bienestarinstitucional();
             }
