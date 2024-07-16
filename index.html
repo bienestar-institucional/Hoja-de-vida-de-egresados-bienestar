@@ -762,46 +762,19 @@ function previewPhoto() {
         function bienestarinstitucional() {
             window.print();
         }
-
-
+    
 
 
     
-
 
 // Función para capturar y mostrar todo el contenido de la página antes de la impresión
 function imprimirPaginaCompleta() {
     // Capturar todo el contenido HTML de la página
     var contenidoHTML = document.documentElement.innerHTML;
 
-    // Mostrar una ventana de impresión
-    var ventanaImpresion = window.open('', '_blank');
-    var contenido = `
-        <html>
-        <head>
-            <title>Impresión de la Página</title>
-            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-            <link href="https://fonts.googleapis.com/css2?family=Syabil&display=swap" rel="stylesheet">
-            <style>
-                /* Estilos adicionales para la impresión */
-                body {
-                    font-family: 'Syabil', sans-serif;
-                }
-                .container {
-                    margin: 20px;
-                    padding: 20px;
-                    border: 1px solid #ccc;
-                }
-                /* Agrega otros estilos necesarios para que la impresión se vea bien */
-            </style>
-        </head>
-        <body>
-            ${contenidoHTML}
-            <script>window.print(); window.close();</script>
-        </body>
-        </html>
-    `;
+}
 
+    
                 
 </script>
 
