@@ -766,6 +766,8 @@ function previewPhoto() {
 
 
 
+    
+
 
 // Función para capturar y mostrar todo el contenido de la página antes de la impresión
 function imprimirPaginaCompleta() {
@@ -800,23 +802,6 @@ function imprimirPaginaCompleta() {
         </html>
     `;
 
-    ventanaImpresion.document.open();
-    ventanaImpresion.document.write(contenido);
-    ventanaImpresion.document.close();
-}
-
-// Función para verificar datos antes de guardar o imprimir
-function verificarDatos(event) {
-    event.preventDefault(); // Evitar el comportamiento predeterminado del botón
-    // Aquí puedes implementar lógica adicional para verificar y validar datos antes de imprimir
-    imprimirPaginaCompleta();
-}
-
-
-
-
-
-    
                 
 </script>
 
