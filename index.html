@@ -767,12 +767,32 @@ function previewPhoto() {
 
     
 
-// Función para capturar y mostrar todo el contenido de la página antes de la impresión
-function imprimirPaginaCompleta() {
-    // Capturar todo el contenido HTML de la página
-    var contenidoHTML = document.documentElement.innerHTML;
+// Función para guardar los datos del formulario en localStorage
+function guardarDatosLocales() {
+    const formData = {
+        name: document.getElementById('name').value,
+        documentType: document.getElementById('document-type').value,
+        // Agregar más campos según sea necesario
+    };
 
+    localStorage.setItem('formData', JSON.stringify(formData));
 }
+
+// Event listener para guardar automáticamente cuando se cambian los datos
+document.querySelectorAll('input, select, textarea').forEach(input => {
+    input.addEventListener('input', guardarDatosLocales);
+});
+
+// Función para cargar los datos del almacenamiento local al cargar la página
+document.addEventListener('DOMContentLoaded', function() {
+    const storedData = localStorage.getItem('formData');
+    if (storedData) {
+        const formData = JSON.parse(storedData);
+        document.getElementById('name').value = formData.name;
+        document.getElementById('document-type').value = formData.documentType;
+        // Cargar más campos según sea necesario
+    }
+});
 
     
                 
