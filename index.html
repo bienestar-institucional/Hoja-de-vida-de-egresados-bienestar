@@ -21,11 +21,19 @@
         <center>
             <img src="https://i.postimg.cc/0rRDr5tq/logo-corporacion.png" width="35%">
             <img src="https://i.postimg.cc/G2bcLWPS/logo-de-bienestar.png" width="15%">
-            <h2>HOJA DE VIDA UNICA DE EGRESADOS</h2>
+
+            <div class="letras2">
+                <h2>HOJA DE VIDA ÚNICA DE EGRESADOS</h2>
+            </div>
+            
+
+            </center>
+
+ 
         </center>
         <div class="section">
             <center>
-                <h4>SISTEMA DE GESTION DE CALIDAD</h4>
+                <p>SISTEMA DE GESTION DE CALIDAD</p>
             </center>
 
             <label for="photo">Foto:</label>
@@ -36,7 +44,7 @@
             
             
             <center>
-                <h4>DATOS PERSONALES</h4>
+                <h4>DATOS PERSONALES:</h4>
             </center>
             <label for="name">Nombre y Apellidos:</label>
             <input type="text" id="name" name="name" required>
@@ -67,7 +75,7 @@
         </div>
 
         <div class="section">
-            <h4>FORMACION ACADEMICA</h4>
+            <h4>FORMACION ACADEMICA:</h4>
             <label for="education-level">Nivel Académico:</label>
             <select id="education-level" name="education-level">
                 <option value="Bachillerato">Bachillerato</option>
@@ -152,12 +160,13 @@
         </div>
       
       
-      
-      
-      
-        <br>
-        <h4 style="text-align: center;">EDUCACION CONTINUA: formación complementaria para el fortalecimiento de competencias humanas y profesionales. <br>Contempla seminarios, foros, congresos, diplomados y cursos</h4>
-        <br>
+        <div class="letras">
+            <h2 style="text-align: center; margin: 35px 0;">
+                EDUCACIÓN CONTINUA: formación complementaria para el fortalecimiento de competencias humanas y profesionales.
+                <br>Contempla seminarios, foros, congresos, diplomados y cursos.
+            </h2>
+        </div>
+        
 
         <form id="educacionContinuaForm">
             <table>
@@ -192,7 +201,7 @@
             </table>
             <br>
             <div class="section">
-                <h4>EXPERIENCIA LABORAL O HUMANA</h4>
+                <h4>EXPERIENCIA LABORAL O HUMANA:</h4>
                 <label for="job1-title">Nombre de la Empresa:</label>
                 <input type="text" id="job1-title" name="job1-title">
 
@@ -213,7 +222,7 @@
             </div>
 
             <div class="section">
-                <h4>ENTIDAD QUE POSTULA</h4>
+                <h4>ENTIDAD QUE POSTULA:</h4>
                 <label for="job1-title">Nombre de la empresa:</label>
                 <input type="text" id="job1-title" name="job1-title">
 
@@ -237,7 +246,7 @@
             </div>
 
             <div class="section">
-                <h4>REFERENCIAS FAMILIARES</h4>
+                <h4>REFERENCIAS FAMILIARES:</h4>
                 <label for="job1-title">Tipo de vinculo o Relacion:</label>
                 <input type="text" id="job1-title" name="job1-title">
 
@@ -255,63 +264,54 @@
 
                 <label for="job2-company">Correo electronico:</label>
                 <input type="text" id="job2-company" name="job2-company">
-            </div>
+            </div><br><br><br>
 
-            <center>
-                <p>
-                    <h7>manifesto bajo la gravedad del juramento, me encuentro dentro de las casuales<br>
-                    de inhabilidad e incompatibilidad del orden constitucional o legal, para prestar<br>
-                    servicios de acuerdo a mis competencias o perfil ocupacional en cualquier de las<br>
-                    modalidades de contratacion. para todos los efectos legales, certifico que los datos<br>
-                    anotados por mi en el presente formato de hoja de vida, son veraces.</h7><br>
-                </p>
-                <input type="radio" id="si" name="respuesta" value="si">
-                <label for="si">Sí</label>
-                <input type="radio" id="no" name="respuesta" value="no">
-                <label for="no">No</label>
-            </center>
 
-            <center>
-                <h4>TU FIRMA: <i class="far fa-edit"></i></h4>
-            </center>
+                <h5>
+                    Manifiesto bajo la gravedad del juramento que no me encuentro dentro de las causales
+                    de inhabilidad e incompatibilidad del orden constitucional o legal para prestar
+                    servicios de acuerdo a mis competencias o perfil ocupacional en cualquiera de las
+                    modalidades de contratación. Para todos los efectos legales, certifico que los datos
+                    anotados por mí en el presente formato de hoja de vida son veraces.
+                </h5><br><br>
+                
 
-            <center>
+                <div class="radio-group">
+                    <input type="radio" id="si" name="respuesta" value="si">
+                    <label for="si">Sí</label>
+                    <input type="radio" id="no" name="respuesta" value="no">
+                    <label for="no">No</label>
+                </div>
+            
+                <div class="signature">
+                    <h4>TU FIRMA: <i class="far fa-edit"></i></h4>
+                </div>
+                
 
               
                   <div class="file-input-container">
         <input type="file" id="file-input" class="file-input" onchange="displayFile()">
-        <label for="file-input" class="file-input-label">Seleccionar archivo</label>
+        <label for="file-input" class="file-input-label">Seleccionar firma</label>
         <div id="file-name" class="file-name"></div>
         <div class="image-preview-container">
             <img id="image-preview" class="image-preview" src="" alt="Vista previa de la imagen">
                     </div>
-    </div><br><br><br><br>
-              
-    <center>
-        <h6>GUARDAR: <i class="far fa-save"></i></h5>
-        <button id="guardar" onclick="verificarDatos(event)">GUARDAR IMPRESION</button>
-    </center>
-            </center>
+    </div><br><br><br>
+
+ <div id="negro">
+        <h6>GUARDAR: <i class="far fa-save"></i></h6>
+    </div>
+
+    <button id="guardar" class="guardar" onclick="verificarDatos(event)">GUARDAR IMPRESION</button>
+    
         </form>
     </div>
 </body>
 </html>
 
-              
+            
 
               
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -339,23 +339,28 @@
 
     <style>
 
-        body {
-            
-      font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-      text-align: center;
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            background: url(https://i.postimg.cc/hv7VSQ1r/foto.jpg);
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-attachment: fixed;
-            background-size: cover;
-        }
-        
+body {
+
+
+    background: linear-gradient(45deg, #f0f0f0, #87ceeb, #ffc0cb); /* Gris claro, azul cielo y rosa pálido */
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    display: block;
+    display: flex;
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    margin: 0 auto;
+    box-sizing: border-box;
+  
+}
+
+
         .container {
             
-            max-width: 600px;
+            max-width: 650px;
             margin: auto;
             padding: 20px;
             background-color: rgba(255, 255, 255, 0.8);
@@ -363,18 +368,80 @@
             overflow: hidden;
         }
 
-        h1, h2 {
 
-            text-align: center;
+
+ .letras {
+
+    font-size: 12px;
+            font-weight: bold;
+            font-family: cursive;
+            font-style: italic;
+
+
+ }
+ 
+
+ .letras2 {
+
+    color: rgb(255, 96, 96);
+    font-weight: bold;
+
+ }
+
+
+
+        p{
+
+            font-size: 20px;
+font-weight: bold;
+            font-style: italic;
+         color: rgb(0, 0, 0);
+
+
+
         }
 
-
-        h6,h4 {
+        h4 {
 
 font-size: 20px;
+font-weight: bold;
+            font-style: italic;
+           color: rgb(255, 96, 96);
 
 
         }
+
+
+        h5 {
+
+    
+            font-size: 16px;
+            font-weight: bold;
+          font-family: cursive;
+            font-style: italic;
+
+
+        }
+
+
+        h6 {
+
+
+
+            font-size: 20px;
+            font-weight: bold;
+            font-style: italic;
+
+
+        }
+
+
+#negro h6 {
+
+color: rgb(0, 161, 0);
+
+
+}
 
 
         input::placeholder {
@@ -383,11 +450,14 @@ font-size: 20px;
 
 
         label {
+
             display: block;
             margin-top: 10px;
             font-weight: bold;
         }
+
         input, textarea, select {
+
             width: 100%;
             padding: 10px;
             margin-top: 5px;
@@ -395,13 +465,17 @@ font-size: 20px;
             border: 1px solid #ccc;
             box-sizing: border-box;
         }
+
         .photo-placeholder {
+
             border: 1px solid #000;
             height: 170px;
             width: 130px;
             margin: 10px auto;
         }
+
         .section {
+
             margin-top: 20px;
         }
         
@@ -410,19 +484,27 @@ font-size: 20px;
             border-collapse: collapse;
             margin-top: 20px;
         }
+
         th, td {
+
             border: 1px solid black;
             padding: 10px;
             text-align: center;
         }
+
         th {
+
             background-color: #f2f2f2;
         }
+
         .file-input-container {
+
             text-align: center;
             margin: 20px 0;
         }
+
         .file-input-label {
+
             display: inline-block;
             padding: 10px 20px;
             border-radius: 5px;
@@ -431,66 +513,123 @@ font-size: 20px;
             cursor: pointer;
             font-size: 16px;
         }
+
         .file-input-label:hover {
+
             background-color: #0056b3;
         }
+
         .file-input {
+
             display: none;
         }
+
         .file-name {
+
             margin-top: 10px;
             font-size: 14px;
         }
+
         .image-preview-container {
+
             display: flex;
             justify-content: center;
             align-items: center;
             margin-top: 10px;
         }
+
         .image-preview {
+
             max-width: 100%;
             max-height: 100px;
             display: none;
         }
-        #guardar,button {
+
+
+        .button {
+
             font-style: italic;
             width: 50%;
             height: 50%;
-            background: linear-gradient(to left, #000000 50%, rgb(255, 255, 255) 50%);
-            background-size: 200% 200%;
-            background-position: right bottom;
-            filter: brightness(100%);
-            font-family: 'TeXGyreCursor-Regular', monospace;
-            padding: 18px 15px;
+            background-color: #007bff;
+            padding: 10px 12px;
             color: white;
             font-weight: bold;
-            box-shadow: 0 0 30px #154360;
-            text-align: center;
-            transition: all 0.8s;
             text-decoration: none;
             display: inline-block;
-            font-size: 15px;
-            margin: 20px 0;
-            border: 1px solid #000000;
+            font-size: 14px;
+            margin: 30px 0;
+            border: 2px solid #007bff;
             border-radius: 5px;
         }
-        #guardar:hover {
-            color: rgb(0, 0, 0);
-            border: 2px solid rgb(0, 0, 0);
-            background-position: left bottom;
-            transform: scale(1.2);
-            transform-origin: top left;
-        }
-
-
 
         .button:hover {
-            color: rgb(0, 0, 0);
-            border: 2px solid rgb(0, 0, 0);
-            background-position: left bottom;
-            transform: scale(1.2);
-            transform-origin: top left;
+
+           color: white;
+           background-color: #0056b3;
+            border: 2px solid #0056b3;
         }
+
+
+
+
+.guardar {   
+    
+    
+font-size: 16px;
+background-color: black;
+color: white;
+border-radius: 50px;
+padding: 10px 20px;
+
+}
+
+
+        .guardar:hover { 
+            
+            background-color: white;
+            color: black;
+            border: 1px solid black;
+             
+       
+         
+        }
+
+
+        .radio-group {
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            text-align: left; 
+        }
+
+        .signature {
+            
+            text-align: center;
+            margin-top: 20px;
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -499,8 +638,8 @@ font-size: 20px;
 
   #guardar,button {
 
-    padding: 10px 10px;
-    width: 25%;
+    padding: 10px 20px;
+    width: 50%;
     height: 0%;
     font-size: 13px;
 
@@ -521,9 +660,33 @@ font-size: 20px;
         font-size: 12px; /* Adjust font size for better readability on small screens */
     }
 
+
+
+  h2 {
+
+
+            font-weight: bold;
+          font-family: 'Courier New', Courier, monospace;
+          font-style: italic;
+  }
+
+h5 {
+
+    font-weight: bold;
+          font-family: 'Courier New', Courier, monospace;
+          font-style: italic;
+          font-size: 12px;
+
+
+
+}
+
+  }
             
-        }
-            
+        
+
+        
+    
 
             
 
@@ -535,7 +698,7 @@ font-size: 20px;
             
            body {
                
-                background-image: none;
+                background-color: none;
             }
             
             input[type="file"], button, .file-input-label, #guardar,.button,h6 {
