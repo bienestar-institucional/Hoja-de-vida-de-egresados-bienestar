@@ -346,11 +346,15 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            background: url(https://i.postimg.cc/hv7VSQ1r/foto.jpg) no-repeat center center fixed;
+            background: url(https://i.postimg.cc/hv7VSQ1r/foto.jpg);
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
             background-size: cover;
         }
         
         .container {
+            
             max-width: 600px;
             margin: auto;
             padding: 20px;
@@ -526,10 +530,14 @@ font-size: 20px;
 
 
 
+        
         @media print {
-            body {
-                background-image: none !important;
+            
+           body {
+               
+                background-image: none;
             }
+            
             input[type="file"], button, .file-input-label, #guardar,.button,h6 {
                 display: none;
             }
