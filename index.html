@@ -949,11 +949,7 @@ padding: 10px 20px;
 
 
 
-
-
-
-    <script>
-
+<script> 
 
 
 
@@ -973,33 +969,33 @@ function guardarDatosLocales() {
         year: document.getElementById('year').value || '',
         graduated: document.getElementById('graduated').value || '',
         title: document.getElementById('title').value || '',
-        nivelEspanolEscribe: document.getElementById('nivel-espanol-escribe').checked,
-        nivelEspanolLee: document.getElementById('nivel-espanol-lee').checked,
-        nivelEspanolHabla: document.getElementById('nivel-espanol-habla').checked,
-        nivelInglesEscribe: document.getElementById('nivel-ingles-escribe').checked,
-        nivelInglesLee: document.getElementById('nivel-ingles-lee').checked,
-        nivelInglesHabla: document.getElementById('nivel-ingles-habla').checked,
-        nivelFrancesEscribe: document.getElementById('nivel-frances-escribe').checked,
-        nivelFrancesLee: document.getElementById('nivel-frances-lee').checked,
-        nivelFrancesHabla: document.getElementById('nivel-frances-habla').checked,
-        nivelOtraEscribe: document.getElementById('nivel-otra-escribe').checked,
-        nivelOtraLee: document.getElementById('nivel-otra-lee').checked,
-        nivelOtraHabla: document.getElementById('nivel-otra-habla').checked,
+        nivelEspanolEscribe: document.getElementById('nivel-espanol-escribe').checked || false,
+        nivelEspanolLee: document.getElementById('nivel-espanol-lee').checked || false,
+        nivelEspanolHabla: document.getElementById('nivel-espanol-habla').checked || false,
+        nivelInglesEscribe: document.getElementById('nivel-ingles-escribe').checked || false,
+        nivelInglesLee: document.getElementById('nivel-ingles-lee').checked || false,
+        nivelInglesHabla: document.getElementById('nivel-ingles-habla').checked || false,
+        nivelFrancesEscribe: document.getElementById('nivel-frances-escribe').checked || false,
+        nivelFrancesLee: document.getElementById('nivel-frances-lee').checked || false,
+        nivelFrancesHabla: document.getElementById('nivel-frances-habla').checked || false,
+        nivelOtraEscribe: document.getElementById('nivel-otra-escribe').checked || false,
+        nivelOtraLee: document.getElementById('nivel-otra-lee').checked || false,
+        nivelOtraHabla: document.getElementById('nivel-otra-habla').checked || false,
         educacionContinua: {
             congreso: {
-                nombre: document.getElementsByName('nombre_formacion_congreso')[0].value || '',
-                entidad: document.getElementsByName('entidad_certifica_congreso')[0].value || '',
-                fecha: document.getElementsByName('fecha_congreso')[0].value || ''
+                nombre: document.getElementsByName('nombre_formacion_congreso')[0]?.value || '',
+                entidad: document.getElementsByName('entidad_certifica_congreso')[0]?.value || '',
+                fecha: document.getElementsByName('fecha_congreso')[0]?.value || ''
             },
             diplomado: {
-                nombre: document.getElementsByName('nombre_formacion_diplomado')[0].value || '',
-                entidad: document.getElementsByName('entidad_certifica_diplomado')[0].value || '',
-                fecha: document.getElementsByName('fecha_diplomado')[0].value || ''
+                nombre: document.getElementsByName('nombre_formacion_diplomado')[0]?.value || '',
+                entidad: document.getElementsByName('entidad_certifica_diplomado')[0]?.value || '',
+                fecha: document.getElementsByName('fecha_diplomado')[0]?.value || ''
             },
             seminario: {
-                nombre: document.getElementsByName('nombre_formacion_seminario')[0].value || '',
-                entidad: document.getElementsByName('entidad_certifica_seminario')[0].value || '',
-                fecha: document.getElementsByName('fecha_seminario')[0].value || ''
+                nombre: document.getElementsByName('nombre_formacion_seminario')[0]?.value || '',
+                entidad: document.getElementsByName('entidad_certifica_seminario')[0]?.value || '',
+                fecha: document.getElementsByName('fecha_seminario')[0]?.value || ''
             }
         },
         experienciaLaboral: {
@@ -1032,7 +1028,7 @@ function guardarDatosLocales() {
             correoElectronico: document.getElementById('referencias-familiares-correo-electronico').value || ''
         },
         manifiestoJuramento: document.querySelector('input[name="manifiesto-juramento"]:checked') ? document.querySelector('input[name="manifiesto-juramento"]:checked').value : '',
-        firma: document.getElementById('firma').textContent || ''
+        firma: document.getElementById('firma') ? document.getElementById('firma').textContent || '' : ''
     };
 
     localStorage.setItem('formData', JSON.stringify(formData));
@@ -1048,76 +1044,81 @@ document.addEventListener('DOMContentLoaded', function() {
     const storedData = localStorage.getItem('formData');
     if (storedData) {
         const formData = JSON.parse(storedData);
-        document.getElementById('name').value = formData.name;
-        document.getElementById('document-type').value = formData.documentType;
-        document.getElementById('document-number').value = formData.documentNumber;
-        document.getElementById('nationality').value = formData.nationality;
-        document.getElementById('phone').value = formData.phone;
-        document.getElementById('address').value = formData.address;
-        document.getElementById('email').value = formData.email;
-        document.getElementById('education-level').value = formData.educationLevel;
-        document.getElementById('semesters').value = formData.semesters;
-        document.getElementById('year').value = formData.year;
-        document.getElementById('graduated').value = formData.graduated;
-        document.getElementById('title').value = formData.title;
-        document.getElementById('nivel-espanol-escribe').checked = formData.nivelEspanolEscribe;
-        document.getElementById('nivel-espanol-lee').checked = formData.nivelEspanolLee;
-        document.getElementById('nivel-espanol-habla').checked = formData.nivelEspanolHabla;
-        document.getElementById('nivel-ingles-escribe').checked = formData.nivelInglesEscribe;
-        document.getElementById('nivel-ingles-lee').checked = formData.nivelInglesLee;
-        document.getElementById('nivel-ingles-habla').checked = formData.nivelInglesHabla;
-        document.getElementById('nivel-frances-escribe').checked = formData.nivelFrancesEscribe;
-        document.getElementById('nivel-frances-lee').checked = formData.nivelFrancesLee;
-        document.getElementById('nivel-frances-habla').checked = formData.nivelFrancesHabla;
-        document.getElementById('nivel-otra-escribe').checked = formData.nivelOtraEscribe;
-        document.getElementById('nivel-otra-lee').checked = formData.nivelOtraLee;
-        document.getElementById('nivel-otra-habla').checked = formData.nivelOtraHabla;
+        document.getElementById('name').value = formData.name || '';
+        document.getElementById('document-type').value = formData.documentType || '';
+        document.getElementById('document-number').value = formData.documentNumber || '';
+        document.getElementById('nationality').value = formData.nationality || '';
+        document.getElementById('phone').value = formData.phone || '';
+        document.getElementById('address').value = formData.address || '';
+        document.getElementById('email').value = formData.email || '';
+        document.getElementById('education-level').value = formData.educationLevel || '';
+        document.getElementById('semesters').value = formData.semesters || '';
+        document.getElementById('year').value = formData.year || '';
+        document.getElementById('graduated').value = formData.graduated || '';
+        document.getElementById('title').value = formData.title || '';
+        document.getElementById('nivel-espanol-escribe').checked = formData.nivelEspanolEscribe || false;
+        document.getElementById('nivel-espanol-lee').checked = formData.nivelEspanolLee || false;
+        document.getElementById('nivel-espanol-habla').checked = formData.nivelEspanolHabla || false;
+        document.getElementById('nivel-ingles-escribe').checked = formData.nivelInglesEscribe || false;
+        document.getElementById('nivel-ingles-lee').checked = formData.nivelInglesLee || false;
+        document.getElementById('nivel-ingles-habla').checked = formData.nivelInglesHabla || false;
+        document.getElementById('nivel-frances-escribe').checked = formData.nivelFrancesEscribe || false;
+        document.getElementById('nivel-frances-lee').checked = formData.nivelFrancesLee || false;
+        document.getElementById('nivel-frances-habla').checked = formData.nivelFrancesHabla || false;
+        document.getElementById('nivel-otra-escribe').checked = formData.nivelOtraEscribe || false;
+        document.getElementById('nivel-otra-lee').checked = formData.nivelOtraLee || false;
+        document.getElementById('nivel-otra-habla').checked = formData.nivelOtraHabla || false;
 
         // Cargar educación continua
-        document.getElementsByName('nombre_formacion_congreso')[0].value = formData.educacionContinua.congreso.nombre;
-        document.getElementsByName('entidad_certifica_congreso')[0].value = formData.educacionContinua.congreso.entidad;
-        document.getElementsByName('fecha_congreso')[0].value = formData.educacionContinua.congreso.fecha;
-        document.getElementsByName('nombre_formacion_diplomado')[0].value = formData.educacionContinua.diplomado.nombre;
-        document.getElementsByName('entidad_certifica_diplomado')[0].value = formData.educacionContinua.diplomado.entidad;
-        document.getElementsByName('fecha_diplomado')[0].value = formData.educacionContinua.diplomado.fecha;
-        document.getElementsByName('nombre_formacion_seminario')[0].value = formData.educacionContinua.seminario.nombre;
-        document.getElementsByName('entidad_certifica_seminario')[0].value = formData.educacionContinua.seminario.entidad;
-        document.getElementsByName('fecha_seminario')[0].value = formData.educacionContinua.seminario.fecha;
+        document.getElementsByName('nombre_formacion_congreso')[0]?.value = formData.educacionContinua.congreso.nombre || '';
+        document.getElementsByName('entidad_certifica_congreso')[0]?.value = formData.educacionContinua.congreso.entidad || '';
+        document.getElementsByName('fecha_congreso')[0]?.value = formData.educacionContinua.congreso.fecha || '';
+        document.getElementsByName('nombre_formacion_diplomado')[0]?.value = formData.educacionContinua.diplomado.nombre || '';
+        document.getElementsByName('entidad_certifica_diplomado')[0]?.value = formData.educacionContinua.diplomado.entidad || '';
+        document.getElementsByName('fecha_diplomado')[0]?.value = formData.educacionContinua.diplomado.fecha || '';
+        document.getElementsByName('nombre_formacion_seminario')[0]?.value = formData.educacionContinua.seminario.nombre || '';
+        document.getElementsByName('entidad_certifica_seminario')[0]?.value = formData.educacionContinua.seminario.entidad || '';
+        document.getElementsByName('fecha_seminario')[0]?.value = formData.educacionContinua.seminario.fecha || '';
 
         // Cargar experiencia laboral
-        document.getElementById('job1-title').value = formData.experienciaLaboral.job1.titulo;
-        document.getElementById('job1-company').value = formData.experienciaLaboral.job1.empresa;
-        document.getElementById('job1-date').value = formData.experienciaLaboral.job1.jefe;
-        document.getElementById('job1-description').value = formData.experienciaLaboral.job1.tiempo;
-        document.getElementById('job2-title').value = formData.experienciaLaboral.job2.año;
-        document.getElementById('job2-company').value = formData.experienciaLaboral.job2.contacto;
+        document.getElementById('job1-title').value = formData.experienciaLaboral.job1.titulo || '';
+        document.getElementById('job1-company').value = formData.experienciaLaboral.job1.empresa || '';
+        document.getElementById('job1-date').value = formData.experienciaLaboral.job1.jefe || '';
+        document.getElementById('job1-description').value = formData.experienciaLaboral.job1.tiempo || '';
+        document.getElementById('job2-title').value = formData.experienciaLaboral.job2.año || '';
+        document.getElementById('job2-company').value = formData.experienciaLaboral.job2.contacto || '';
 
         // Cargar entidad que postula
-        document.getElementById('entidad-postula-nombre-empresa').value = formData.entidadPostula.nombreEmpresa;
-        document.getElementById('entidad-postula-oficina-enlace').value = formData.entidadPostula.oficinaEnlace;
-        document.getElementById('entidad-postula-direccion-empresa').value = formData.entidadPostula.direccionEmpresa;
-        document.getElementById('entidad-postula-funcionario-contacto').value = formData.entidadPostula.funcionarioContacto;
-        document.getElementById('entidad-postula-telefono-empresa').value = formData.entidadPostula.telefonoEmpresa;
-        document.getElementById('entidad-postula-correo-empresa').value = formData.entidadPostula.correoEmpresa;
-        document.getElementById('entidad-postula-pagina-web-empresa').value = formData.entidadPostula.paginaWebEmpresa;
+        document.getElementById('entidad-postula-nombre-empresa').value = formData.entidadPostula.nombreEmpresa || '';
+        document.getElementById('entidad-postula-oficina-enlace').value = formData.entidadPostula.oficinaEnlace || '';
+        document.getElementById('entidad-postula-direccion-empresa').value = formData.entidadPostula.direccionEmpresa || '';
+        document.getElementById('entidad-postula-funcionario-contacto').value = formData.entidadPostula.funcionarioContacto || '';
+        document.getElementById('entidad-postula-telefono-empresa').value = formData.entidadPostula.telefonoEmpresa || '';
+        document.getElementById('entidad-postula-correo-empresa').value = formData.entidadPostula.correoEmpresa || '';
+        document.getElementById('entidad-postula-pagina-web-empresa').value = formData.entidadPostula.paginaWebEmpresa || '';
 
         // Cargar referencias familiares
-        document.getElementById('referencias-familiares-tipo-vinculo').value = formData.referenciasFamiliares.tipoVinculo;
-        document.getElementById('referencias-familiares-nombre-persona').value = formData.referenciasFamiliares.nombrePersona;
-        document.getElementById('referencias-familiares-direccion-domicilio').value = formData.referenciasFamiliares.direccionDomicilio;
-        document.getElementById('referencias-familiares-dedicacion').value = formData.referenciasFamiliares.dedicacion;
-        document.getElementById('referencias-familiares-telefono-celular').value = formData.referenciasFamiliares.telefonoCelular;
-        document.getElementById('referencias-familiares-correo-electronico').value = formData.referenciasFamiliares.correoElectronico;
+        document.getElementById('referencias-familiares-tipo-vinculo').value = formData.referenciasFamiliares.tipoVinculo || '';
+        document.getElementById('referencias-familiares-nombre-persona').value = formData.referenciasFamiliares.nombrePersona || '';
+        document.getElementById('referencias-familiares-direccion-domicilio').value = formData.referenciasFamiliares.direccionDomicilio || '';
+        document.getElementById('referencias-familiares-dedicacion').value = formData.referenciasFamiliares.dedicacion || '';
+        document.getElementById('referencias-familiares-telefono-celular').value = formData.referenciasFamiliares.telefonoCelular || '';
+        document.getElementById('referencias-familiares-correo-electronico').value = formData.referenciasFamiliares.correoElectronico || '';
 
         // Cargar manifiesto juramento
         if (formData.manifiestoJuramento) {
-            document.querySelector('input[name="manifiesto-juramento"][value="' + formData.manifiestoJuramento + '"]').checked = true;
+            document.querySelector('input[name="manifiesto-juramento"][value="' + formData.manifiestoJuramento + '"]')?.checked = true;
         }
 
         // Cargar firma
-        document.getElementById('firma').textContent = formData.firma;
+        document.getElementById('firma')?.textContent = formData.firma || '';
     }
 });
 
+
           
-    </script>
+
+</script>
+
+
+          
