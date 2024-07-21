@@ -18,6 +18,7 @@
 <body>
 
     <div class="container">
+
         <center>
             <img src="https://i.postimg.cc/0rRDr5tq/logo-corporacion.png" width="35%">
             <img src="https://i.postimg.cc/G2bcLWPS/logo-de-bienestar.png" width="15%">
@@ -44,62 +45,99 @@
             
             
             <center>
-                <h4>DATOS PERSONALES:</h4>
+                <h4>DATOS PERSONALES:</h4><br>
             </center>
-            <label for="name">Nombre y Apellidos:</label>
-            <input type="text" id="name" name="name" required>
-            <label for="document-type">Tipo de Documento:</label>
-            <select id="document-type" name="document-type">
-                <option value="TI.">TI.</option>
-                <option value="CC.">CC.</option>
-                <option value="Pte.">Pte.</option>
-                <option value="PPT.">PPT.</option>
-            </select>
-            <label for="document-number">Número de Documento:</label>
-            <input type="text" id="document-number" name="document-number" placeholder="Digite su número de documento" required>
-            <label for="nationality">Nacionalidad:</label>
-            <select id="nationality" name="nationality">
-                <option value="Colombiana">Colombiana</option>
-                <option value="Venezolana">Venezolana</option>
-                <option value="Argentina">Argentina</option>
-                <option value="Brasileña">Brasileña</option>
-                <option value="Chilena">Chilena</option>
-                <option value="Otro">Otro</option>
-            </select>
-            <label for="phone">Teléfono:</label>
-            <input type="text" id="phone" name="phone">
-            <label for="address">Dirección:</label>
-            <input type="text" id="address" name="address">
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email">
-        </div>
 
-        <div class="section">
-            <h4>FORMACION ACADEMICA:</h4>
-            <label for="education-level">Nivel Académico:</label>
-            <select id="education-level" name="education-level">
-                <option value="Bachillerato">Bachillerato</option>
-                <option value="Técnico Laboral">Técnico Laboral</option>
-                <option value="Tecnólogo">Tecnólogo</option>
-                <option value="Pregrado">Pregrado</option>
-                <option value="Posgrado">Posgrado</option>
-            </select>
-            <label for="semesters">Semestres o Años:</label>
-            <input type="text" id="semesters" name="semesters">
-            <label for="year">Año:</label>
-            <input type="text" id="year" name="year">
-            <label for="graduated">Graduado:</label>
-            <input type="text" id="graduated" name="graduated">
-            <label for="title">Título Obtenido:</label>
-            <input type="text" id="title" name="title">
-        </div>
 
-    
-      
+            <form id="personal-form">
+                <label for="name">Nombre y Apellidos:</label>
+                <input type="text" id="name" name="name" placeholder="Su nombre completo y Apellidos" required><br><br>
+        
+                <label for="document-type">Tipo de Documento:</label>
+                <select id="document-type" name="document-type" required>
+                    <option value="" disabled selected>Seleccione.</option>
+                    <option value="TI.">TI.</option>
+                    <option value="CC.">CC.</option>
+                    <option value="Pte.">Pte.</option>
+                    <option value="PPT.">PPT.</option>
+                </select><br><br>
+        
+                <label for="document-number">Número de Documento:</label>
+        <input type="text" id="document-number" name="document-number" placeholder="Su número de documento" required 
+               oninput="handleInput('document-number', 'documentobienestar')">
+               <div id="documentobienestar" class="documentobienestar" style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; margin-top: 20px;">¡SOLO SE PERMITEN NUMEROS!.</div>
+        <br><br>
+         
+
+                <label for="nationality">Nacionalidad:</label>
+                <select id="nationality" name="nationality" required>
+                    <option value="" disabled selected>Seleccione.</option>
+                    <option value="Colombiana">Colombiana</option>
+                    <option value="Venezolana">Venezolana</option>
+                    <option value="Argentina">Argentina</option>
+                    <option value="Brasileña">Brasileña</option>
+                    <option value="Chilena">Chilena</option>
+                    <option value="Otro">Otro</option>
+                </select><br><br>
+        
+                <label for="phone">Teléfono:</label>
+                <input type="text" id="phone" name="phone" placeholder="Número de Celular" required 
+                       oninput="handleInput('phone', 'telefonobienestar')">
+                       <div id="telefonobienestar" class="telefonobienestar" style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; margin-top: 20px;">¡SOLO SE PERMITEN NUMEROS!.</div>
+
+                <br><br>
+        
+        
+
+                <label for="address">Dirección:</label>
+                <input type="text" id="address" name="address" placeholder="¿Dónde vives?" required><br><br>
+        
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="Tu correo @" required
+                       pattern="[a-zA-Z0-9._%+-]+@gmail\.com" 
+                       title="Por favor, ingrese una dirección de correo válida como (@gmail.com)" 
+                       oninput="validateEmail()">
+                       <div id="emailbienestar" class="error-message" style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; margin-top: 20px;">Por favor, ingrese una dirección de correo válida con '@gmail.com'.</div>
+                <br><br>
+            </form>
+        
+
+
+
+            <div class="section">
+                <h4>FORMACIÓN ACADÉMICA:</h4><br>
+                <label for="education-level">Nivel Académico:</label>
+                <select id="education-level" name="education-level" required>
+                    <option value="" disabled selected>Seleccione.</option>
+                    <option value="Bachillerato">Bachillerato</option>
+                    <option value="Técnico Laboral">Técnico Laboral</option>
+                    <option value="Tecnólogo">Tecnólogo</option>
+                    <option value="Pregrado">Pregrado</option>
+                    <option value="Posgrado">Posgrado</option>
+                </select><br><br>
+        
+                <label for="semesters">Semestres o Años:</label>
+                <input type="text" id="semesters" name="semesters" required><br><br>
+        
+                <label for="year">Año:</label>
+                <input type="text" id="year" name="year" required><br><br>
+        
+                <label for="graduated">Graduado:</label>
+                <input type="text" id="graduated" name="graduated" required><br><br>
+        
+                <label for="title">Título Obtenido:</label>
+                <input type="text" id="title" name="title" required><br><br>
+            </div><br><br>
+
+
+
+
+
+
       
       
       <div class="section">
-            <h4>ESPECIFICA LA LENGUA QUE MANEJAS Y TU NIVEL (LEE, ESCRIBE Y HABLA)</h4>
+            <h4>ESPECIFICA LA LENGUA QUE MANEJAS Y TU NIVEL (LEE, ESCRIBE Y HABLA)</h4><br>
             <form id="lenguasForm">
                 <table>
                     <thead>
@@ -157,7 +195,7 @@
                     </tbody>
                 </table>
             </form>
-        </div>
+        </div><br><br>
       
       
         <div class="letras">
@@ -165,7 +203,7 @@
                 EDUCACIÓN CONTINUA: formación complementaria para el fortalecimiento de competencias humanas y profesionales.
                 <br>Contempla seminarios, foros, congresos, diplomados y cursos.
             </h2>
-        </div>
+        </div><br><br>
         
 
         <form id="educacionContinuaForm">
@@ -199,71 +237,71 @@
                     </tr>
                 </tbody>
             </table>
-            <br>
+            <br><br>
             <div class="section">
-                <h4>EXPERIENCIA LABORAL O HUMANA:</h4>
+                <h4>EXPERIENCIA LABORAL O HUMANA:</h4><br>
                 <label for="job1-title">Nombre de la Empresa:</label>
-                <input type="text" id="job1-title" name="job1-title">
+                <input type="text" id="job1-title" name="job1-title"><br><br>
 
                 <label for="job1-company">Cargo que Ocupo:</label>
-                <input type="text" id="job1-company" name="job1-company">
+                <input type="text" id="job1-company" name="job1-company"><br><br>
 
                 <label for="job1-date">Jefe Inmediato:</label>
-                <input type="text" id="job1-date" name="job1-date">
+                <input type="text" id="job1-date" name="job1-date"><br><br>
 
                 <label for="job1-description">Tiempo que presto el Servicio:</label>
-                <textarea id="job1-description" name="job1-description"></textarea>
+                <textarea id="job1-description" name="job1-description"></textarea><br><br>
 
                 <label for="job2-title">Año en que lo Presto:</label>
-                <input type="text" id="job2-title" name="job2-title">
+                <input type="text" id="job2-title" name="job2-title"><br><br>
 
                 <label for="job2-company">Numero de Contacto o Correo:</label>
-                <input type="text" id="job2-company" name="job2-company">
+                <input type="text" id="job2-company" name="job2-company"><br><br>
             </div>
 
             <div class="section">
-                <h4>ENTIDAD QUE POSTULA:</h4>
+                <h4>ENTIDAD QUE POSTULA:</h4><br>
                 <label for="job1-title">Nombre de la empresa:</label>
-                <input type="text" id="job1-title" name="job1-title">
+                <input type="text" id="job1-title" name="job1-title"><br><br>
 
                 <label for="job1-company">Oficina enlace:</label>
-                <input type="text" id="job1-company" name="job1-company">
+                <input type="text" id="job1-company" name="job1-company"><br><br>
 
                 <label for="job1-date">Dirrecion de Empresa:</label>
-                <input type="text" id="job1-date" name="job1-date">
+                <input type="text" id="job1-date" name="job1-date"><br><br>
 
                 <label for="job1-description">Funcionario de Contacto:</label>
                 <textarea id="job1-description" name="job1-description"></textarea>
 
                 <label for="job2-title">Numero de Teléfono o Celular:</label>
-                <input type="text" id="job2-title" name="job2-title">
+                <input type="text" id="job2-title" name="job2-title"><br><br>
 
                 <label for="job2-company">Correo electronico de Empresa:</label>
-                <input type="text" id="job2-company" name="job2-company">
+                <input type="text" id="job2-company" name="job2-company"><br><br>
 
                 <label for="job2-company">Pagina web de Empresa:</label>
-                <input type="text" id="job2-company" name="job2-company">
-            </div>
+                <input type="text" id="job2-company" name="job2-company"><br><br>
+            </div><br>
 
             <div class="section">
-                <h4>REFERENCIAS FAMILIARES:</h4>
+                <h4>REFERENCIAS FAMILIARES:</h4><br>
                 <label for="job1-title">Tipo de vinculo o Relacion:</label>
-                <input type="text" id="job1-title" name="job1-title">
+                <input type="text" id="job1-title" name="job1-title"><br><br>
 
                 <label for="job1-company">Nombre de la Persona:</label>
-                <input type="text" id="job1-company" name="job1-company">
+                <input type="text" id="job1-company" name="job1-company"><br><br>
 
                 <label for="job1-date">Dirrecion o Domicilio:</label>
-                <input type="text" id="job1-date" name="job1-date">
+                <input type="text" id="job1-date" name="job1-date"><br><br>
 
                 <label for="job1-description">A que se Dedica:</label>
-                <textarea id="job1-description" name="job1-description"></textarea>
+                <textarea id="job1-description" name="job1-description"></textarea><br><br>
 
                 <label for="job2-title">Numero de Teléfono o Celular:</label>
-                <input type="text" id="job2-title" name="job2-title">
+                <input type="text" id="job2-title" name="job2-title"><br><br>
 
                 <label for="job2-company">Correo electronico:</label>
-                <input type="text" id="job2-company" name="job2-company">
+                <input type="text" id="job2-company" name="job2-company"><br><br>
             </div><br><br><br>
 
 
@@ -302,28 +340,14 @@
         <h6>GUARDAR: <i class="far fa-save"></i></h6>
     </div>
 
-    <button id="guardar" class="guardar" onclick="verificarDatos()">GUADAR IMPRESION</button>
-    
+    <button id="guardar" class="guardar" onclick="verificarDatos(event)">GUARDAR PDF E IMPRIMIR</button>
         </form>
-
-        
+        </div>
     </div>
 </body>
 </html>
 
-            
-
               
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -372,11 +396,92 @@ body {
 
 
 
+
+
+ /* Incluye el CSS proporcionado aquí */
+ #document-number:invalid,
+        #phone:invalid {
+            border: 2px solid red;
+        }
+        #document-number:valid,
+        #phone:valid {
+            border: 2px solid green;
+        }
+
+        .documentobienestar, .telefonobienestar {
+            color: red;
+            font-size: 0.9em;
+            display: none;
+        }
+        .visible {
+            display: block;
+        }
+
+ /* Estilos específicos para cada campo de entrada */
+ #name:invalid {
+            border: 2px solid red;
+        }
+        #name:valid {
+            border: 2px solid green;
+        }
+
+        #document-type:invalid {
+            border: 2px solid red;
+        }
+        #document-type:valid {
+            border: 2px solid green;
+        }
+
+        #document-number:invalid {
+            border: 2px solid red;
+        }
+        #document-number:valid {
+            border: 2px solid green;
+        }
+
+        #nationality:invalid {
+            border: 2px solid red;
+        }
+        #nationality:valid {
+            border: 2px solid green;
+        }
+
+        #phone:invalid {
+            border: 2px solid red;
+        }
+        #phone:valid {
+            border: 2px solid green;
+        }
+
+        #address:invalid {
+            border: 2px solid red;
+        }
+        #address:valid {
+            border: 2px solid green;
+        }
+
+        #email:invalid {
+            border: 2px solid red;
+        }
+        #email:valid {
+            border: 2px solid green;
+        }
+
+        /* Mensaje de error */
+        .error-message {
+            color: red;
+            font-size: 0.9em;
+            display: none;
+        }
+        .visible {
+            display: block;
+        }
+
  .letras {
 
     font-size: 12px;
             font-weight: bold;
-            font-family: cursive;
+            font-family: 'Courier New', Courier, monospace;
             font-style: italic;
 
 
@@ -384,7 +489,7 @@ body {
  
 
  .letras2 {
-
+    font-family: 'Courier New', Courier, monospace;
     color: rgb(255, 96, 96);
     font-weight: bold;
 
@@ -416,10 +521,10 @@ font-weight: bold;
 
         h5 {
 
-    
+     font-family: 'Courier New', Courier, monospace;
             font-size: 16px;
             font-weight: bold;
-          font-family: cursive;
+            font-family: 'Courier New', Courier, monospace;
             font-style: italic;
 
 
@@ -482,6 +587,7 @@ color: rgb(0, 161, 0);
         }
         
         table {
+
             width: 100%;
             border-collapse: collapse;
             margin-top: 20px;
@@ -581,6 +687,8 @@ color: rgb(0, 161, 0);
 font-size: 16px;
 background-color: black;
 color: white;
+font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+font-weight: bold;
 border-radius: 50px;
 padding: 10px 20px;
 
@@ -589,9 +697,9 @@ padding: 10px 20px;
 
         .guardar:hover { 
             
-            background-color: white;
-            color: black;
-            border: 1px solid black;
+            background-color: rgb(0, 161, 0);
+            color: rgb(255, 255, 255);
+            border: 1px solid rgb(0, 161, 0);
              
        
          
@@ -617,35 +725,46 @@ padding: 10px 20px;
 
 
 
+    /* Estilos para impresión */
+@media print {
+
+    html, body {
+        background-color: transparent !important; /* Fondo transparente */
+    }
+
+    /* Ocultar colores de borde y fondo */
+    #document-number, #phone {
+        border: 1px solid #000 !important; /* Borde negro o gris claro para impresión */
+        background-color: transparent !important;
+    }
+    
+    #document-number.valid,
+    #phone.valid {
+        border-color: #000 !important; /* Borde negro para impresión */
+    }
+    
+    #document-number.invalid,
+    #phone.invalid {
+        border-color: #000 !important; /* Borde negro para impresión */
+    }
+    
+    /* Ocultar elementos específicos para impresión */
+    input[type="file"], button, .file-input-label, #guardar, .button, h6,
+    .documentobienestar, .telefonobienestar {
+        display: none !important;
+    }
+}
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        @media only screen and (max-width: 600px) {
-
-  #guardar,button {
-
-    padding: 10px 20px;
-    width: 50%;
-    height: 0%;
-    font-size: 13px;
-
-  }
+/* Estilos para pantallas pequeñas */
+@media only screen and (max-width: 600px) {
+    #guardar, button {
+        padding: 10px 20px;
+        width: 50%;
+        height: 0%;
+        font-size: 13px;
+    }
 
     .section {
         overflow: hidden;
@@ -658,56 +777,24 @@ padding: 10px 20px;
     }
             
     th, td {
-        padding: 8px;
-        font-size: 12px; /* Adjust font size for better readability on small screens */
+        padding: 15px;
+        font-size: 12px; /* Ajustar tamaño de fuente para mejor legibilidad en pantallas pequeñas */
     }
 
+    h2 {
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        font-weight: bold;
+        font-style: italic;
+    }
 
-
-  h2 {
-
-
-            font-weight: bold;
-          font-family: 'Courier New', Courier, monospace;
-          font-style: italic;
-  }
-
-h5 {
-
-    font-weight: bold;
-          font-family: 'Courier New', Courier, monospace;
-          font-style: italic;
-          font-size: 12px;
-
-
-
+    h5 {
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        font-weight: bold;
+        font-style: italic;
+        font-size: 12px;
+    }
 }
 
-  }
-            
-        
-
-        
-    
-
-            
-
-
-
-
-        
-        @media print {
-            
-          body {
-        background: none !important;
-              font-family: Arial, sans-serif;
-        font-size: 12pt;
-    }
-            
-            input[type="file"], button, .file-input-label, #guardar,.button,h6 {
-                display: none;
-            }
-        }
         
     </style>
 
@@ -721,99 +808,320 @@ h5 {
 <script>
 
 
-document.addEventListener('DOMContentLoaded', function() {
-    const previewContainer = document.getElementById('photo-preview');
 
-    if (previewContainer) {
-        previewContainer.innerHTML = '<img src="https://es-wiki.metin2.gameforge.com/images/9/97/Usuario.png" alt="Foto de perfil" style="width:100%;height:100%;object-fit:cover;">';
-    }
-});
-
-function previewPhoto() {
-    const file = document.getElementById('photo').files[0];
-    const reader = new FileReader();
-    reader.onloadend = function() {
-        document.getElementById('photo-preview').innerHTML = '<img src="' + reader.result + '" alt="Foto de perfil" style="width:100%;height:100%;object-fit:cover;">';
-    }
-    if (file) {
-        reader.readAsDataURL(file);
-    }
-}
-
-
-
-
-    
- // Función para guardar los datos del formulario en localStorage
-    function guardarDatosLocales() {
-        const formData = {
-            name: document.getElementById('name').value,
-            documentType: document.getElementById('document-type').value,
-            // Agregar más campos según sea necesario
-        };
-
-        localStorage.setItem('formData', JSON.stringify(formData));
-    }
-
-    // Event listener para guardar automáticamente cuando se cambian los datos
-    document.querySelectorAll('input, select, textarea').forEach(input => {
-        input.addEventListener('input', guardarDatosLocales);
-    });
-
-    // Función para cargar los datos del almacenamiento local al cargar la página
     document.addEventListener('DOMContentLoaded', function() {
-        const storedData = localStorage.getItem('formData');
-        if (storedData) {
-            const formData = JSON.parse(storedData);
-            document.getElementById('name').value = formData.name;
-            document.getElementById('document-type').value = formData.documentType;
-            // Cargar más campos según sea necesario
+        const previewContainer = document.getElementById('photo-preview');
+    
+        if (previewContainer) {
+            previewContainer.innerHTML = '<img src="https://es-wiki.metin2.gameforge.com/images/9/97/Usuario.png" alt="Foto de perfil" style="width:100%;height:100%;object-fit:cover;">';
         }
     });
-
-    // Función para verificar datos antes de imprimir
-    function verificarDatos(event) {
-        const nameInput = document.getElementById('name');
-        if (nameInput.value.trim() === '') {
-            event.preventDefault();
-            alert('POR FAVOR COMPLETA TUS DATOS ANTES DE IMPRIMIR.');
-        } else {
-            bienestarinstitucional();
+    
+    function previewPhoto() {
+        const file = document.getElementById('photo').files[0];
+        const reader = new FileReader();
+        reader.onloadend = function() {
+            document.getElementById('photo-preview').innerHTML = '<img src="' + reader.result + '" alt="Foto de perfil" style="width:100%;height:100%;object-fit:cover;">';
+        }
+        if (file) {
+            reader.readAsDataURL(file);
         }
     }
-
-    // Función para imprimir la página
-    function bienestarinstitucional() {
-        window.print();
-    }
-                
+    
+    
 </script>
 
 
 
 
+<script>
 
-
-
-
-
-
- <script>
-
-        function displayFile() {
-            var input = document.getElementById('file-input');
-            var file = input.files[0];
-            if (file && file.type.startsWith('image/')) {
-                var reader = new FileReader();
-                reader.onload = function(e) {
-                    var img = document.getElementById('image-preview');
-                    img.src = e.target.result;
-                    img.style.display = 'block';
-                };
-                reader.readAsDataURL(file);
+        function validateEmail() {
+            const input = document.getElementById('email');
+            const errorMessage = document.getElementById('emailbienestar');
+            
+            if (input.validity.valid) {
+                errorMessage.classList.remove('visible');
             } else {
-                document.getElementById('image-preview').style.display = 'none';
+                errorMessage.classList.add('visible');
+                // Ocultar el mensaje después de 3 segundos
+                setTimeout(() => {
+                    errorMessage.classList.remove('visible');
+                }, 8000);
             }
         }
 
+
+        function handleInput(inputId, errorId) {
+    const input = document.getElementById(inputId);
+    const errorMessage = document.getElementById(errorId);
+    
+    // Verifica si el valor contiene caracteres no numéricos
+    if (/^[0-9]*$/.test(input.value)) {
+        // Si solo tiene números, es válido
+        input.classList.remove('invalid');
+        input.classList.add('valid');
+        errorMessage.classList.remove('visible');
+    } else {
+        // Si tiene letras, es inválido
+        input.classList.remove('valid');
+        input.classList.add('invalid');
+        errorMessage.classList.add('visible');
+        // Ocultar el mensaje después de 3 segundos
+        setTimeout(() => {
+            errorMessage.classList.remove('visible');
+        }, 8000);
+    }
+}
+
+    </script>
+
+
+
+
+    
+
+  <script>
+
+        // Función para verificar datos antes de imprimir
+        function verificarDatos(event) {
+            event.preventDefault(); // Prevenir el envío del formulario por defecto
+            
+            const name = document.getElementById('name');
+            const documentType = document.getElementById('document-type');
+            const documentNumber = document.getElementById('document-number');
+            const nationality = document.getElementById('nationality');
+            const phone = document.getElementById('phone');
+            const address = document.getElementById('address');
+            const email = document.getElementById('email');
+            
+            // Verificar si todos los campos son válidos
+            if (name.checkValidity() && 
+                documentType.checkValidity() && 
+                documentNumber.checkValidity() && 
+                nationality.checkValidity() && 
+                phone.checkValidity() && 
+                address.checkValidity() && 
+                email.checkValidity()) {
+                bienestarinstitucional();
+            } else {
+                alert('POR FAVOR COMPLETA TUS DATOS ANTES DE IMPRIMIR.');
+                document.getElementById('personal-form').reportValidity(); // Mostrar los mensajes de error de validación
+            }
+        }
+
+        // Función para imprimir la página
+        function bienestarinstitucional() {
+            window.print();
+        }
+
+    </script>
+
+
+
+
+
+
+    
+    
+     <script>
+    
+            function displayFile() {
+                var input = document.getElementById('file-input');
+                var file = input.files[0];
+                if (file && file.type.startsWith('image/')) {
+                    var reader = new FileReader();
+                    reader.onload = function(e) {
+                        var img = document.getElementById('image-preview');
+                        img.src = e.target.result;
+                        img.style.display = 'block';
+                    };
+                    reader.readAsDataURL(file);
+                } else {
+                    document.getElementById('image-preview').style.display = 'none';
+                }
+            }
+    
+        </script>
+    
+
+
+
+
+
+
+
+
+
+
+
+
+    <script>
+
+
+
+
+
+// Función para guardar los datos del formulario en localStorage
+function guardarDatosLocales() {
+    const formData = {
+        name: document.getElementById('name').value || '',
+        documentType: document.getElementById('document-type').value || '',
+        documentNumber: document.getElementById('document-number').value || '',
+        nationality: document.getElementById('nationality').value || '',
+        phone: document.getElementById('phone').value || '',
+        address: document.getElementById('address').value || '',
+        email: document.getElementById('email').value || '',
+        educationLevel: document.getElementById('education-level').value || '',
+        semesters: document.getElementById('semesters').value || '',
+        year: document.getElementById('year').value || '',
+        graduated: document.getElementById('graduated').value || '',
+        title: document.getElementById('title').value || '',
+        nivelEspanolEscribe: document.getElementById('nivel-espanol-escribe').checked,
+        nivelEspanolLee: document.getElementById('nivel-espanol-lee').checked,
+        nivelEspanolHabla: document.getElementById('nivel-espanol-habla').checked,
+        nivelInglesEscribe: document.getElementById('nivel-ingles-escribe').checked,
+        nivelInglesLee: document.getElementById('nivel-ingles-lee').checked,
+        nivelInglesHabla: document.getElementById('nivel-ingles-habla').checked,
+        nivelFrancesEscribe: document.getElementById('nivel-frances-escribe').checked,
+        nivelFrancesLee: document.getElementById('nivel-frances-lee').checked,
+        nivelFrancesHabla: document.getElementById('nivel-frances-habla').checked,
+        nivelOtraEscribe: document.getElementById('nivel-otra-escribe').checked,
+        nivelOtraLee: document.getElementById('nivel-otra-lee').checked,
+        nivelOtraHabla: document.getElementById('nivel-otra-habla').checked,
+        educacionContinua: {
+            congreso: {
+                nombre: document.getElementsByName('nombre_formacion_congreso')[0].value || '',
+                entidad: document.getElementsByName('entidad_certifica_congreso')[0].value || '',
+                fecha: document.getElementsByName('fecha_congreso')[0].value || ''
+            },
+            diplomado: {
+                nombre: document.getElementsByName('nombre_formacion_diplomado')[0].value || '',
+                entidad: document.getElementsByName('entidad_certifica_diplomado')[0].value || '',
+                fecha: document.getElementsByName('fecha_diplomado')[0].value || ''
+            },
+            seminario: {
+                nombre: document.getElementsByName('nombre_formacion_seminario')[0].value || '',
+                entidad: document.getElementsByName('entidad_certifica_seminario')[0].value || '',
+                fecha: document.getElementsByName('fecha_seminario')[0].value || ''
+            }
+        },
+        experienciaLaboral: {
+            job1: {
+                titulo: document.getElementById('job1-title').value || '',
+                empresa: document.getElementById('job1-company').value || '',
+                jefe: document.getElementById('job1-date').value || '',
+                tiempo: document.getElementById('job1-description').value || ''
+            },
+            job2: {
+                año: document.getElementById('job2-title').value || '',
+                contacto: document.getElementById('job2-company').value || ''
+            }
+        },
+        entidadPostula: {
+            nombreEmpresa: document.getElementById('entidad-postula-nombre-empresa').value || '',
+            oficinaEnlace: document.getElementById('entidad-postula-oficina-enlace').value || '',
+            direccionEmpresa: document.getElementById('entidad-postula-direccion-empresa').value || '',
+            funcionarioContacto: document.getElementById('entidad-postula-funcionario-contacto').value || '',
+            telefonoEmpresa: document.getElementById('entidad-postula-telefono-empresa').value || '',
+            correoEmpresa: document.getElementById('entidad-postula-correo-empresa').value || '',
+            paginaWebEmpresa: document.getElementById('entidad-postula-pagina-web-empresa').value || ''
+        },
+        referenciasFamiliares: {
+            tipoVinculo: document.getElementById('referencias-familiares-tipo-vinculo').value || '',
+            nombrePersona: document.getElementById('referencias-familiares-nombre-persona').value || '',
+            direccionDomicilio: document.getElementById('referencias-familiares-direccion-domicilio').value || '',
+            dedicacion: document.getElementById('referencias-familiares-dedicacion').value || '',
+            telefonoCelular: document.getElementById('referencias-familiares-telefono-celular').value || '',
+            correoElectronico: document.getElementById('referencias-familiares-correo-electronico').value || ''
+        },
+        manifiestoJuramento: document.querySelector('input[name="manifiesto-juramento"]:checked') ? document.querySelector('input[name="manifiesto-juramento"]:checked').value : '',
+        firma: document.getElementById('firma').textContent || ''
+    };
+
+    localStorage.setItem('formData', JSON.stringify(formData));
+}
+
+// Event listener para guardar automáticamente cuando se cambian los datos
+document.querySelectorAll('input, select, textarea').forEach(input => {
+    input.addEventListener('input', guardarDatosLocales);
+});
+
+// Función para cargar los datos del almacenamiento local al cargar la página
+document.addEventListener('DOMContentLoaded', function() {
+    const storedData = localStorage.getItem('formData');
+    if (storedData) {
+        const formData = JSON.parse(storedData);
+        document.getElementById('name').value = formData.name;
+        document.getElementById('document-type').value = formData.documentType;
+        document.getElementById('document-number').value = formData.documentNumber;
+        document.getElementById('nationality').value = formData.nationality;
+        document.getElementById('phone').value = formData.phone;
+        document.getElementById('address').value = formData.address;
+        document.getElementById('email').value = formData.email;
+        document.getElementById('education-level').value = formData.educationLevel;
+        document.getElementById('semesters').value = formData.semesters;
+        document.getElementById('year').value = formData.year;
+        document.getElementById('graduated').value = formData.graduated;
+        document.getElementById('title').value = formData.title;
+        document.getElementById('nivel-espanol-escribe').checked = formData.nivelEspanolEscribe;
+        document.getElementById('nivel-espanol-lee').checked = formData.nivelEspanolLee;
+        document.getElementById('nivel-espanol-habla').checked = formData.nivelEspanolHabla;
+        document.getElementById('nivel-ingles-escribe').checked = formData.nivelInglesEscribe;
+        document.getElementById('nivel-ingles-lee').checked = formData.nivelInglesLee;
+        document.getElementById('nivel-ingles-habla').checked = formData.nivelInglesHabla;
+        document.getElementById('nivel-frances-escribe').checked = formData.nivelFrancesEscribe;
+        document.getElementById('nivel-frances-lee').checked = formData.nivelFrancesLee;
+        document.getElementById('nivel-frances-habla').checked = formData.nivelFrancesHabla;
+        document.getElementById('nivel-otra-escribe').checked = formData.nivelOtraEscribe;
+        document.getElementById('nivel-otra-lee').checked = formData.nivelOtraLee;
+        document.getElementById('nivel-otra-habla').checked = formData.nivelOtraHabla;
+
+        // Cargar educación continua
+        document.getElementsByName('nombre_formacion_congreso')[0].value = formData.educacionContinua.congreso.nombre;
+        document.getElementsByName('entidad_certifica_congreso')[0].value = formData.educacionContinua.congreso.entidad;
+        document.getElementsByName('fecha_congreso')[0].value = formData.educacionContinua.congreso.fecha;
+        document.getElementsByName('nombre_formacion_diplomado')[0].value = formData.educacionContinua.diplomado.nombre;
+        document.getElementsByName('entidad_certifica_diplomado')[0].value = formData.educacionContinua.diplomado.entidad;
+        document.getElementsByName('fecha_diplomado')[0].value = formData.educacionContinua.diplomado.fecha;
+        document.getElementsByName('nombre_formacion_seminario')[0].value = formData.educacionContinua.seminario.nombre;
+        document.getElementsByName('entidad_certifica_seminario')[0].value = formData.educacionContinua.seminario.entidad;
+        document.getElementsByName('fecha_seminario')[0].value = formData.educacionContinua.seminario.fecha;
+
+        // Cargar experiencia laboral
+        document.getElementById('job1-title').value = formData.experienciaLaboral.job1.titulo;
+        document.getElementById('job1-company').value = formData.experienciaLaboral.job1.empresa;
+        document.getElementById('job1-date').value = formData.experienciaLaboral.job1.jefe;
+        document.getElementById('job1-description').value = formData.experienciaLaboral.job1.tiempo;
+        document.getElementById('job2-title').value = formData.experienciaLaboral.job2.año;
+        document.getElementById('job2-company').value = formData.experienciaLaboral.job2.contacto;
+
+        // Cargar entidad que postula
+        document.getElementById('entidad-postula-nombre-empresa').value = formData.entidadPostula.nombreEmpresa;
+        document.getElementById('entidad-postula-oficina-enlace').value = formData.entidadPostula.oficinaEnlace;
+        document.getElementById('entidad-postula-direccion-empresa').value = formData.entidadPostula.direccionEmpresa;
+        document.getElementById('entidad-postula-funcionario-contacto').value = formData.entidadPostula.funcionarioContacto;
+        document.getElementById('entidad-postula-telefono-empresa').value = formData.entidadPostula.telefonoEmpresa;
+        document.getElementById('entidad-postula-correo-empresa').value = formData.entidadPostula.correoEmpresa;
+        document.getElementById('entidad-postula-pagina-web-empresa').value = formData.entidadPostula.paginaWebEmpresa;
+
+        // Cargar referencias familiares
+        document.getElementById('referencias-familiares-tipo-vinculo').value = formData.referenciasFamiliares.tipoVinculo;
+        document.getElementById('referencias-familiares-nombre-persona').value = formData.referenciasFamiliares.nombrePersona;
+        document.getElementById('referencias-familiares-direccion-domicilio').value = formData.referenciasFamiliares.direccionDomicilio;
+        document.getElementById('referencias-familiares-dedicacion').value = formData.referenciasFamiliares.dedicacion;
+        document.getElementById('referencias-familiares-telefono-celular').value = formData.referenciasFamiliares.telefonoCelular;
+        document.getElementById('referencias-familiares-correo-electronico').value = formData.referenciasFamiliares.correoElectronico;
+
+        // Cargar manifiesto juramento
+        if (formData.manifiestoJuramento) {
+            document.querySelector('input[name="manifiesto-juramento"][value="' + formData.manifiestoJuramento + '"]').checked = true;
+        }
+
+        // Cargar firma
+        document.getElementById('firma').textContent = formData.firma;
+    }
+});
+
+          
     </script>
