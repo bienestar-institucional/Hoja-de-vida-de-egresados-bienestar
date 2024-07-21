@@ -725,35 +725,31 @@ padding: 10px 20px;
 
 
 
-    /* Estilos para impresión */
+/* Estilos para impresión */
 @media print {
-
     html, body {
         background-color: transparent !important; /* Fondo transparente */
     }
 
     /* Ocultar colores de borde y fondo */
-    #document-number, #phone {
+    #document-number, #phone, #name, #document-type, #nationality, #address, #email {
         border: 1px solid #000 !important; /* Borde negro o gris claro para impresión */
         background-color: transparent !important;
     }
     
-    #document-number.valid,
-    #phone.valid {
+    /* Aplicar borde negro para elementos válidos e inválidos */
+    #document-number:valid, #phone:valid,
+    #document-number:invalid, #phone:invalid {
         border-color: #000 !important; /* Borde negro para impresión */
     }
-    
-    #document-number.invalid,
-    #phone.invalid {
-        border-color: #000 !important; /* Borde negro para impresión */
-    }
-    
+
     /* Ocultar elementos específicos para impresión */
     input[type="file"], button, .file-input-label, #guardar, .button, h6,
-    .documentobienestar, .telefonobienestar {
+    .documentobienestar, .telefonobienestar, .error-message {
         display: none !important;
     }
 }
+
 
 
 
