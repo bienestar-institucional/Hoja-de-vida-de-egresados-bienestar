@@ -9,6 +9,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <meta name="keywords" content="hoja de vida, egresados, bienestar joven">
     <meta name="author" content="samuel and jampier">
+    <link rel="stylesheet" href="bienestar.css">
+    <link rel="stylesheet" href="bienestar.js">
+    <link rel="stylesheet" href="print.css" media="print"> <!-- Estilos para impresión -->
     <link rel="icon" href="https://i.ibb.co/4Wnwx9x/bienestar-joven.webp" type="image/png">
     <link href="https://fonts.googleapis.com/css2?family=Syabil&display=swap" rel="stylesheet">
 </head>
@@ -109,7 +112,7 @@
                 <h4>FORMACIÓN ACADÉMICA:</h4><br>
                 <label for="education-level">Nivel Académico:</label>
                 <select id="education-level" name="education-level" required>
-                    <option value="" disabled selected>Seleccione.</option>
+                    <option value="" disabled selected style="text-align: center;">Seleccione.</option>
                     <option value="Bachillerato">Bachillerato</option>
                     <option value="Técnico Laboral">Técnico Laboral</option>
                     <option value="Tecnólogo">Tecnólogo</option>
@@ -363,6 +366,7 @@
 
 
 
+
     <style>
 
 body {
@@ -373,9 +377,6 @@ body {
     text-align: center;
     margin: 0;
     padding: 0;
-    display: block;
-    display: flex;
-    display: grid;
     align-items: center;
     justify-items: center;
     margin: 0 auto;
@@ -566,6 +567,7 @@ color: rgb(0, 161, 0);
         input, textarea, select {
 
             width: 100%;
+            text-align: center;
             padding: 10px;
             margin-top: 5px;
             border-radius: 5px;
@@ -724,37 +726,38 @@ padding: 10px 20px;
 
 
 
-
-/* Estilos para impresión */
-@media print {
+        @media print {
     html, body {
+        background: none !important; /* Elimina el fondo para impresión */
         background-color: transparent !important; /* Fondo transparente */
     }
 
-    /* Ocultar colores de borde y fondo */
     #document-number, #phone, #name, #document-type, #nationality, #address, #email {
-        border: 1px solid #000 !important; /* Borde negro o gris claro para impresión */
-        background-color: transparent !important;
+        border: 1px solid #000 !important; /* Borde negro para impresión */
+        background-color: transparent !important; /* Fondo transparente para impresión */
     }
     
-    /* Aplicar borde negro para elementos válidos e inválidos */
     #document-number:valid, #phone:valid,
-    #document-number:invalid, #phone:invalid {
+    #document-number:invalid, #phone:invalid,
+    #name:valid, #name:invalid,
+    #document-type:valid, #document-type:invalid,
+    #nationality:valid, #nationality:invalid,
+    #address:valid, #address:invalid,
+    #email:valid, #email:invalid {
         border-color: #000 !important; /* Borde negro para impresión */
     }
 
-    /* Ocultar elementos específicos para impresión */
     input[type="file"], button, .file-input-label, #guardar, .button, h6,
     .documentobienestar, .telefonobienestar, .error-message {
-        display: none !important;
+        display: none !important; /* Ocultar elementos para impresión */
     }
 }
 
 
 
-
 /* Estilos para pantallas pequeñas */
 @media only screen and (max-width: 600px) {
+
     #guardar, button {
         padding: 10px 20px;
         width: 50%;
@@ -843,7 +846,7 @@ padding: 10px 20px;
                 // Ocultar el mensaje después de 3 segundos
                 setTimeout(() => {
                     errorMessage.classList.remove('visible');
-                }, 8000);
+                }, 10000);
             }
         }
 
@@ -866,7 +869,7 @@ padding: 10px 20px;
         // Ocultar el mensaje después de 3 segundos
         setTimeout(() => {
             errorMessage.classList.remove('visible');
-        }, 8000);
+        }, 10000);
     }
 }
 
@@ -1119,6 +1122,8 @@ document.addEventListener('DOMContentLoaded', function() {
           
 
 </script>
+
+
 
 
           
