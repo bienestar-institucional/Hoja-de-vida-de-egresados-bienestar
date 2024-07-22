@@ -10,7 +10,6 @@
     <meta name="keywords" content="hoja de vida, egresados, bienestar joven">
     <meta name="author" content="samuel and jampier">
     <link rel="stylesheet" href="bienestar.css">
-    <link rel="stylesheet" href="bienestar.js">
     <link rel="stylesheet" href="print.css" media="print"> <!-- Estilos para impresión -->
     <link rel="icon" href="https://i.ibb.co/4Wnwx9x/bienestar-joven.webp" type="image/png">
     <link href="https://fonts.googleapis.com/css2?family=Syabil&display=swap" rel="stylesheet">
@@ -51,28 +50,25 @@
                 <h4>DATOS PERSONALES:</h4><br>
             </center>
 
-
             <form id="personal-form">
                 <label for="name">Nombre y Apellidos:</label>
                 <input type="text" id="name" name="name" placeholder="Su nombre completo y Apellidos" required><br><br>
-        
+            
                 <label for="document-type">Tipo de Documento:</label>
                 <select id="document-type" name="document-type" placeholder="Su Documento" required>
                     <option value="" disabled selected style="text-align: center;">Seleccione.</option>
-
                     <option value="TI.">TI.</option>
                     <option value="CC.">CC.</option>
                     <option value="Pte.">Pte.</option>
                     <option value="PPT.">PPT.</option>
                 </select><br><br>
-        
+            
                 <label for="document-number">Número de Documento:</label>
-        <input type="text" id="document-number" name="document-number" placeholder="Su número de documento" required 
-               oninput="handleInput('document-number', 'documentobienestar')">
-               <div id="documentobienestar" class="documentobienestar" style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; margin-top: 20px;">¡SOLO SE PERMITEN NUMEROS!.</div>
-        <br><br>
-         
-
+                <input type="text" id="document-number" name="document-number" placeholder="Su número de documento" required 
+                       oninput="handleInput('document-number', 'documentobienestar')">
+                <div id="documentobienestar" class="documentobienestar" style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; margin-top: 20px;">¡SOLO SE PERMITEN NUMEROS!.</div>
+                <br><br>
+            
                 <label for="nationality">Nacionalidad:</label>
                 <select id="nationality" name="nationality" placeholder="Su nacionalidad" required>
                     <option value="" disabled selected style="text-align: center;">Seleccione.</option>
@@ -83,35 +79,30 @@
                     <option value="Chilena">Chilena</option>
                     <option value="Otro">Otro</option>
                 </select><br><br>
-        
-            <!-- Primera entrada -->
-          <label for="phone1">Teléfono:</label>
-           <input type="text" id="phone1" name="phone1" placeholder="Número de Celular" required oninput="handleInput('phone1', 'telefonobienestar1')">
-           <div id="telefonobienestar1" class="telefonobienestar" style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; margin-top: 20px;">¡SOLO SE PERMITEN NUMEROS!.</div>
-
+            
+                <label for="phone">Teléfono:</label>
+                <input type="text" id="phone" name="phone" placeholder="Número de Celular" required oninput="handleInput('phone', 'telefonobienestar')">
+                <div id="telefonobienestar" class="telefonobienestar" style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; margin-top: 20px;">¡SOLO SE PERMITEN NUMEROS!.</div>
                 <br><br>
-
-        
-
+            
                 <label for="address">Dirección:</label>
                 <input type="text" id="address" name="address" placeholder="¿Dónde vives?" required><br><br>
-        
+            
                 <label for="email">Email:</label>
                 <input type="email" id="email" name="email" placeholder="Tu correo @" required
                        pattern="[a-zA-Z0-9._%+-]+@gmail\.com" 
                        title="Por favor, ingrese una dirección de correo válida como (@gmail.com)" 
                        oninput="validateEmail()">
-                       <div id="emailbienestar" class="error-message" style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; margin-top: 20px;">Por favor, ingrese una dirección de correo válida con '@gmail.com'.</div>
+                <div id="emailbienestar" class="error-message" style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; margin-top: 20px;">Por favor, ingrese un correo válido con '@gmail.com'...</div>
                 <br><br>
             </form>
-        
 
 
 
             <div class="section">
                 <h4>FORMACIÓN ACADÉMICA:</h4><br>
                 <label for="education-level">Nivel Académico:</label>
-                <select id="education-level" name="education-level" required>
+                <select id="education-level" name="education-level">
                     <option value="" disabled selected style="text-align: center;">Seleccione.</option>
                     <option value="Bachillerato">Bachillerato</option>
                     <option value="Técnico Laboral">Técnico Laboral</option>
@@ -121,16 +112,16 @@
                 </select><br><br>
         
                 <label for="semesters">Semestres o Años:</label>
-                <input type="text" id="semesters" name="semesters" required><br><br>
+                <input type="text" id="semesters" name="semesters"><br><br>
         
                 <label for="year">Año:</label>
-                <input type="text" id="year" name="year" required><br><br>
+                <input type="text" id="year" name="year"><br><br>
         
                 <label for="graduated">Graduado:</label>
-                <input type="text" id="graduated" name="graduated" required><br><br>
+                <input type="text" id="graduated" name="graduated"><br><br>
         
                 <label for="title">Título Obtenido:</label>
-                <input type="text" id="title" name="title" required><br><br>
+                <input type="text" id="title" name="title"><br><br>
             </div><br><br>
 
 
@@ -242,6 +233,7 @@
                 </tbody>
             </table>
             <br><br>
+
             <div class="section">
                 <h4>EXPERIENCIA LABORAL O HUMANA:</h4><br>
                 <label for="job1-title">Nombre de la Empresa:</label>
@@ -260,7 +252,7 @@
                 <input type="text" id="job2-title" name="job2-title"><br><br>
 
                 <label for="job2-company">Numero de Contacto o Correo:</label>
-              <input type="email" name="email" placeholder="Num o correo @" required>
+              <input type="email" name="email" placeholder="Num o correo @">
          <br><br>
 
                 
@@ -285,44 +277,34 @@
                 
                 
                 <label for="job2-company">Correo electronico de Empresa:</label>
-                <input type="email"name="email" placeholder="correo @" required
-                       pattern="[a-zA-Z0-9._%+-]+@gmail\.com">
+                <input type="email" name="email" placeholder="correo @">
                 <br><br>
                 <label for="job2-company">Pagina web de Empresa:</label>
                 <input type="text" id="job2-company" name="job2-company"><br><br>
             </div><br>
 
 
-
             <div class="section">
-
                 <h4>REFERENCIAS FAMILIARES:</h4><br>
-
-                <label for="job1-title">Tipo de vinculo o Relacion:</label>
+            
+                <label for="job1-title">Tipo de vínculo o Relación:</label>
                 <input type="text" id="job1-title" name="job1-title"><br><br>
-
+            
                 <label for="job1-company">Nombre de la Persona:</label>
                 <input type="text" id="job1-company" name="job1-company"><br><br>
-
-                <label for="job1-date">Dirrecion o Domicilio:</label>
+            
+                <label for="job1-date">Dirección o Domicilio:</label>
                 <input type="text" id="job1-date" name="job1-date"><br><br>
-
-                <label for="job1-description">A que se Dedica:</label>
-                <textarea id="job1-description" name="job1-description"></textarea><br><br>
-
-
-                <label for="phone2">Teléfono:</label>
-                <input type="text" id="phone2" name="phone2" placeholder="Número de Celular" required oninput="handleInput('phone2', 'telefonobienestar2')">
-                <div id="telefonobienestar2" class="telefonobienestar" style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; margin-top: 20px;">¡SOLO SE PERMITEN NUMEROS!.</div>
-
-                <br><br>
-
-                <label for="email">Correo electronico:</label>
-                <input type="email"name="email" placeholder="correo @" required
-                       pattern="[a-zA-Z0-9._%+-]+@gmail\.com">
-                <br><br>
-
-
+            
+                <label for="job1-description">A qué se Dedica:</label>
+                <textarea id="job1-description" name="job1-description" rows="4" cols="50"></textarea><br><br>
+            
+                <label for="phone">Teléfono:</label>
+                <input type="text" name="phone" placeholder="Número de Celular" onkeypress="return event.charCode >= 48 && event.charCode <= 57"><br><br>
+            
+                <label for="email">Correo Electrónico:</label>
+                <input type="email" name="email" placeholder="correo@example.com"><br><br>
+            
                 <h5>
                     Manifiesto bajo la gravedad del juramento que no me encuentro dentro de las causales
                     de inhabilidad e incompatibilidad del orden constitucional o legal para prestar
@@ -330,8 +312,7 @@
                     modalidades de contratación. Para todos los efectos legales, certifico que los datos
                     anotados por mí en el presente formato de hoja de vida son veraces.
                 </h5><br><br>
-                
-
+            
                 <div class="radio-group">
                     <input type="radio" id="si" name="respuesta" value="si">
                     <label for="si">Sí</label>
@@ -342,7 +323,11 @@
                 <div class="signature">
                     <h4>TU FIRMA: <i class="far fa-edit"></i></h4>
                 </div>
-                
+            </div>
+            
+
+
+
 
               
                   <div class="file-input-container">
@@ -358,7 +343,9 @@
         <h6>GUARDAR: <i class="far fa-save"></i></h6>
     </div>
 
+
     <button id="guardar" class="guardar" onclick="verificarDatos(event)">GUARDAR PDF E IMPRIMIR</button>
+
         </form>
         </div>
     </div>
@@ -366,6 +353,25 @@
 </html>
 
               
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -465,13 +471,6 @@ body {
             border: 2px solid red;
         }
         #phone1:valid {
-            border: 2px solid green;
-        }
-
-        #phone2:invalid {
-            border: 2px solid red;
-        }
-        #phone2:valid {
             border: 2px solid green;
         }
 
@@ -758,8 +757,8 @@ padding: 10px 20px;
         background-color: transparent !important; /* Fondo transparente para impresión */
     }
     
-    #document-number:valid, #phone:valid,
-    #document-number:invalid, #phone:invalid,
+    #document-number:valid, #phone1:valid,
+    #document-number:invalid, #phone1:invalid,
     #name:valid, #name:invalid,
     #document-type:valid, #document-type:invalid,
     #nationality:valid, #nationality:invalid,
@@ -856,6 +855,7 @@ padding: 10px 20px;
 
 <script>
 
+
         function validateEmail() {
             const input = document.getElementById('email');
             const errorMessage = document.getElementById('emailbienestar');
@@ -917,37 +917,49 @@ function handleInput(inputId, errorId) {
 
   <script>
 
-        // Función para verificar datos antes de imprimir
-        function verificarDatos(event) {
-            event.preventDefault(); // Prevenir el envío del formulario por defecto
-            
-            const name = document.getElementById('name');
-            const documentType = document.getElementById('document-type');
-            const documentNumber = document.getElementById('document-number');
-            const nationality = document.getElementById('nationality');
-            const phone = document.getElementById('phone');
-            const address = document.getElementById('address');
-            const email = document.getElementById('email');
-            
-            // Verificar si todos los campos son válidos
-            if (name.checkValidity() && 
-                documentType.checkValidity() && 
-                documentNumber.checkValidity() && 
-                nationality.checkValidity() && 
-                phone.checkValidity() && 
-                address.checkValidity() && 
-                email.checkValidity()) {
-                bienestarinstitucional();
-            } else {
-                alert('POR FAVOR COMPLETA TUS DATOS ANTES DE IMPRIMIR.');
-                document.getElementById('personal-form').reportValidity(); // Mostrar los mensajes de error de validación
-            }
+// Función para verificar datos antes de imprimir
+function verificarDatos(event) {
+    event.preventDefault(); // Prevenir el envío del formulario por defecto
+    
+    const name = document.getElementById('name');
+    const documentType = document.getElementById('document-type');
+    const documentNumber = document.getElementById('document-number');
+    const nationality = document.getElementById('nationality');
+    const phone = document.getElementById('phone');
+    const address = document.getElementById('address');
+    const email = document.getElementById('email');
+    
+    // Obtener el valor del correo electrónico
+    const emailValue = email.value.trim();
+    
+    // Verificar si todos los campos son válidos
+    if (name.value.trim() !== '' &&
+        documentType.value.trim() !== '' &&
+        documentNumber.value.trim() !== '' &&
+        nationality.value.trim() !== '' &&
+        phone.value.trim() !== '' &&
+        address.value.trim() !== '' &&
+        emailValue !== '') {
+        
+        // Verificar si el correo electrónico tiene el formato '@gmail.com'
+        if (emailValue.endsWith('@gmail.com')) {
+            bienestarinstitucional();
+        } else {
+            alert('El correo electrónico debe ser valido con:  ' + '@gmail.com');
+            document.getElementById('personal-form').reportValidity(); // Mostrar los mensajes de error de validación
         }
+    } else {
+        alert('POR FAVOR COMPLETA LOS DATOS ANTES DE IMPRIMIR.');
+        // Mostrar los mensajes de error de validación
+        document.getElementById('personal-form').reportValidity();
+    }
+}
 
-        // Función para imprimir la página
-        function bienestarinstitucional() {
-            window.print();
-        }
+// Función para imprimir la página
+function bienestarinstitucional() {
+    window.print();
+}
+
 
     </script>
 
@@ -1157,4 +1169,3 @@ document.addEventListener('DOMContentLoaded', function() {
           
 
 </script>
-
