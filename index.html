@@ -84,13 +84,13 @@
                     <option value="Otro">Otro</option>
                 </select><br><br>
         
-                <label for="phone">Teléfono:</label>
-                <input type="text" id="phone" name="phone" placeholder="Número de Celular" required 
-                       oninput="handleInput('phone', 'telefonobienestar')">
-                       <div id="telefonobienestar" class="telefonobienestar" style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; margin-top: 20px;">¡SOLO SE PERMITEN NUMEROS!.</div>
+            <!-- Primera entrada -->
+          <label for="phone1">Teléfono:</label>
+           <input type="text" id="phone1" name="phone1" placeholder="Número de Celular" required oninput="handleInput('phone1', 'telefonobienestar1')">
+           <div id="telefonobienestar1" class="telefonobienestar" style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; margin-top: 20px;">¡SOLO SE PERMITEN NUMEROS!.</div>
 
                 <br><br>
-        
+
         
 
                 <label for="address">Dirección:</label>
@@ -101,7 +101,7 @@
                        pattern="[a-zA-Z0-9._%+-]+@gmail\.com" 
                        title="Por favor, ingrese una dirección de correo válida como (@gmail.com)" 
                        oninput="validateEmail()">
-                       <div id="emailbienestar" class="error-message" style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; margin-top: 20px;">Por favor, ingrese una dirección de correo válida como (@GMAIL).</div>
+                       <div id="emailbienestar" class="error-message" style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; margin-top: 20px;">Por favor, ingrese una dirección de correo válida con '@gmail.com'.</div>
                 <br><br>
             </form>
         
@@ -260,7 +260,9 @@
                 <input type="text" id="job2-title" name="job2-title"><br><br>
 
                 <label for="job2-company">Numero de Contacto o Correo:</label>
-                <input type="text" id="job2-company" name="job2-company"><br><br>
+                <input type="email"name="email" placeholder="Num o correo @" required
+                pattern="[a-zA-Z0-9._%+-]+@gmail\.com">
+         <br><br>
             </div>
 
             <div class="section">
@@ -278,17 +280,23 @@
                 <textarea id="job1-description" name="job1-description"></textarea>
 
                 <label for="job2-title">Numero de Teléfono o Celular:</label>
-                <input type="text" id="job2-title" name="job2-title"><br><br>
-
+                <input type="text" id="job2-title" name="job2-title" placeholder="Num o cell" onkeypress="return event.charCode >= 48 && event.charCode <= 57"><br><br>
+                
+                
                 <label for="job2-company">Correo electronico de Empresa:</label>
-                <input type="text" id="job2-company" name="job2-company"><br><br>
-
+                <input type="email"name="email" placeholder="correo @" required
+                       pattern="[a-zA-Z0-9._%+-]+@gmail\.com">
+                <br><br>
                 <label for="job2-company">Pagina web de Empresa:</label>
                 <input type="text" id="job2-company" name="job2-company"><br><br>
             </div><br>
 
+
+
             <div class="section">
+
                 <h4>REFERENCIAS FAMILIARES:</h4><br>
+
                 <label for="job1-title">Tipo de vinculo o Relacion:</label>
                 <input type="text" id="job1-title" name="job1-title"><br><br>
 
@@ -301,12 +309,17 @@
                 <label for="job1-description">A que se Dedica:</label>
                 <textarea id="job1-description" name="job1-description"></textarea><br><br>
 
-                <label for="job2-title">Numero de Teléfono o Celular:</label>
-                <input type="text" id="job2-title" name="job2-title"><br><br>
 
-                <label for="job2-company">Correo electronico:</label>
-                <input type="text" id="job2-company" name="job2-company"><br><br>
-            </div><br><br><br>
+                <label for="phone2">Teléfono:</label>
+                <input type="text" id="phone2" name="phone2" placeholder="Número de Celular" required oninput="handleInput('phone2', 'telefonobienestar2')">
+                <div id="telefonobienestar2" class="telefonobienestar" style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; margin-top: 20px;">¡SOLO SE PERMITEN NUMEROS!.</div>
+
+                <br><br>
+
+                <label for="email">Correo electronico:</label>
+                <input type="email"name="email" placeholder="correo @" required
+                       pattern="[a-zA-Z0-9._%+-]+@gmail\.com">
+                <br><br>
 
 
                 <h5>
@@ -447,10 +460,17 @@ body {
             border: 2px solid green;
         }
 
-        #phone:invalid {
+        #phone1:invalid {
             border: 2px solid red;
         }
-        #phone:valid {
+        #phone1:valid {
+            border: 2px solid green;
+        }
+
+        #phone2:invalid {
+            border: 2px solid red;
+        }
+        #phone2:valid {
             border: 2px solid green;
         }
 
@@ -851,7 +871,17 @@ padding: 10px 20px;
         }
 
 
-        function handleInput(inputId, errorId) {
+    </script>
+
+
+
+
+
+
+
+<script> 
+
+function handleInput(inputId, errorId) {
     const input = document.getElementById(inputId);
     const errorMessage = document.getElementById(errorId);
     
@@ -874,6 +904,10 @@ padding: 10px 20px;
 }
 
     </script>
+
+
+
+
 
 
 
@@ -1123,7 +1157,3 @@ document.addEventListener('DOMContentLoaded', function() {
 
 </script>
 
-
-
-
-          
