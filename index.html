@@ -25,7 +25,7 @@
             <img src="https://i.postimg.cc/0rRDr5tq/logo-corporacion.png" width="35%">
             <img src="https://i.postimg.cc/G2bcLWPS/logo-de-bienestar.png" width="15%">
 
-            <div class="letras2">
+            <div id="letras2">
                 <h2>HOJA DE VIDA ÚNICA DE EGRESADOS</h2>
             </div>
             
@@ -39,13 +39,67 @@
                 <p>SISTEMA DE GESTION DE CALIDAD</p>
             </center>
 
+
             <label for="photo">Foto:</label>
             <div class="photo-placeholder" id="photo-preview"></div>
-            <button class="button" onclick="document.getElementById('photo').click()">Seleccionar foto</button>
-            <input type="file" id="photo" name="photo" accept="image/*" onchange="previewPhoto()" style="display: none;">
+            <button class="button" onclick="showPhotoOptions(event)">Seleccionar foto</button>
+            <input type="file" id="photo" name="photo" accept="image/*" capture="camera" onchange="previewPhoto()" style="display: none;">
             
+            <div id="photo-options" style="display: none;">
+                <button class="button2" onclick="openCameraPhoto(event)">Cámara</button>
+                <button class="button2" onclick="openGalleryPhoto(event)">Selector de medios</button>
+            </div>
             
+
+
+
+
+            <script>
+
+            document.addEventListener('DOMContentLoaded', function() {
+                const previewContainer = document.getElementById('photo-preview');
             
+                if (previewContainer) {
+                    previewContainer.innerHTML = '<img src="https://es-wiki.metin2.gameforge.com/images/9/97/Usuario.png" alt="Foto de perfil" style="width:100%;height:100%;object-fit:cover;">';
+                }
+            });
+            
+            function showPhotoOptions(event) {
+                event.preventDefault();
+                document.getElementById('photo-options').style.display = 'block';
+            }
+            
+            function openCameraPhoto(event) {
+                event.preventDefault();
+                const input = document.getElementById('photo');
+                input.setAttribute('capture', 'camera');
+                input.click();
+                document.getElementById('photo-options').style.display = 'none';
+            }
+            
+            function openGalleryPhoto(event) {
+                event.preventDefault();
+                const input = document.getElementById('photo');
+                input.removeAttribute('capture');
+                input.click();
+                document.getElementById('photo-options').style.display = 'none';
+            }
+            
+            function previewPhoto() {
+                const file = document.getElementById('photo').files[0];
+                const reader = new FileReader();
+                reader.onloadend = function() {
+                    document.getElementById('photo-preview').innerHTML = '<img src="' + reader.result + '" alt="Foto de perfil" style="width:100%;height:100%;object-fit:cover;">';
+                }
+                if (file) {
+                    reader.readAsDataURL(file);
+                }
+            }
+
+            </script>
+            
+
+
             <center>
                 <h4>DATOS PERSONALES:</h4><br>
             </center>
@@ -193,7 +247,7 @@
         </div><br><br>
       
       
-        <div class="letras">
+        <div id="letras">
             <h2 style="text-align: center; margin: 35px 0;">
                 EDUCACIÓN CONTINUA: formación complementaria para el fortalecimiento de competencias humanas y profesionales.
                 <br>Contempla seminarios, foros, congresos, diplomados y cursos.
@@ -327,17 +381,71 @@
             
 
 
+<div class="file-input-container">
+    <label for="file-input" class="file-input-label" onclick="showSignatureOptions(event)">Seleccionar firma</label>
+    <div id="file-name" class="file-name"></div>
+    <div class="image-preview-container">
+        <img id="image-preview" class="image-preview" src="" alt="Vista previa de la imagen" style="display: none;">
+    </div>
+    <div id="signature-options" style="display: none;">
+        <button class="button2" onclick="openCameraSignature(event)">Cámara</button>
+        <button class="button2" onclick="openGallerySignature(event)">Selector de medios</button>
+    </div>
+    <input type="file" id="file-input" class="file-input" onchange="displaySignatureFile()" style="display: none;">
+</div>
 
 
-              
-                  <div class="file-input-container">
-        <input type="file" id="file-input" class="file-input" onchange="displayFile()">
-        <label for="file-input" class="file-input-label">Seleccionar firma</label>
-        <div id="file-name" class="file-name"></div>
-        <div class="image-preview-container">
-            <img id="image-preview" class="image-preview" src="" alt="Vista previa de la imagen">
-                    </div>
-    </div><br><br><br>
+
+
+<script>
+
+function displaySignatureFile() {
+    var input = document.getElementById('file-input');
+    var file = input.files[0];
+    if (file && file.type.startsWith('image/')) {
+        var reader = new FileReader();
+        reader.onload = function(e) {
+            var img = document.getElementById('image-preview');
+            img.src = e.target.result;
+            img.style.display = 'block';
+        };
+        reader.readAsDataURL(file);
+    } else {
+        document.getElementById('image-preview').style.display = 'none';
+    }
+}
+
+function showSignatureOptions(event) {
+    event.preventDefault();
+    document.getElementById('signature-options').style.display = 'block';
+}
+
+function openCameraSignature(event) {
+    event.preventDefault();
+    const input = document.getElementById('file-input');
+    input.setAttribute('capture', 'camera');
+    input.click();
+    document.getElementById('signature-options').style.display = 'none';
+}
+
+function openGallerySignature(event) {
+    event.preventDefault();
+    const input = document.getElementById('file-input');
+    input.removeAttribute('capture');
+    input.click();
+    document.getElementById('signature-options').style.display = 'none';
+}
+
+</script>
+
+            
+            
+            
+   
+    </div><br><br>
+
+
+
 
  <div id="negro">
         <h6>GUARDAR: <i class="far fa-save"></i></h6>
@@ -498,7 +606,7 @@ body {
             display: block;
         }
 
- .letras {
+ #letras {
 
     font-size: 12px;
             font-weight: bold;
@@ -509,9 +617,9 @@ body {
  }
  
 
- .letras2 {
+ #letras2 {
     font-family: 'Courier New', Courier, monospace;
-    color: rgb(255, 96, 96);
+    color: rgba(4, 0, 255, 0.829);
     font-weight: bold;
 
  }
@@ -534,7 +642,7 @@ font-weight: bold;
 font-size: 20px;
 font-weight: bold;
             font-style: italic;
-           color: rgb(255, 96, 96);
+           color: rgba(4, 0, 255, 0.829);
 
 
         }
@@ -691,6 +799,7 @@ color: rgb(0, 161, 0);
             margin: 30px 0;
             border: 2px solid #007bff;
             border-radius: 5px;
+            cursor: pointer;
         }
 
         .button:hover {
@@ -713,6 +822,7 @@ font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 font-weight: bold;
 border-radius: 50px;
 padding: 10px 20px;
+cursor: pointer;
 
 }
 
@@ -728,6 +838,33 @@ padding: 10px 20px;
         }
 
 
+
+
+        .button2 {
+
+background-color: #000000; /* Color de fondo claro */
+border: 1px solid #ccc; /* Borde gris claro */
+color: #ffffff; /* Color del texto */
+font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+width: 220px;
+height: auto;
+padding: 16px; /* Espaciado interno */
+margin: 26px 26px;
+margin-top: 16px;
+border-radius: 50px;
+border: 1px solid black;
+font-size: 16px; /* Tamaño de la fuente */
+cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+}
+
+.button2:hover {
+background-color: #ffffff; /* Color de fondo al pasar el ratón */
+color: black;
+}
+
+
+
+
         .radio-group {
 
             display: flex;
@@ -735,12 +872,14 @@ padding: 10px 20px;
             align-items: center;
             gap: 10px;
             text-align: left; 
+            cursor: pointer;
         }
 
         .signature {
             
             text-align: center;
             margin-top: 20px;
+
         }
 
 
@@ -812,44 +951,24 @@ padding: 10px 20px;
         font-style: italic;
         font-size: 12px;
     }
+
+
+    .button2 {
+
+margin: 5px 5px;
+width: 150px;
+height: auto;
+padding: 8px 5px;
+font-size: 12px;
+font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
 }
+
+}
+
 
         
     </style>
-
-
-
-
-
-
-
-
-<script>
-
-
-
-    document.addEventListener('DOMContentLoaded', function() {
-        const previewContainer = document.getElementById('photo-preview');
-    
-        if (previewContainer) {
-            previewContainer.innerHTML = '<img src="https://es-wiki.metin2.gameforge.com/images/9/97/Usuario.png" alt="Foto de perfil" style="width:100%;height:100%;object-fit:cover;">';
-        }
-    });
-    
-    function previewPhoto() {
-        const file = document.getElementById('photo').files[0];
-        const reader = new FileReader();
-        reader.onloadend = function() {
-            document.getElementById('photo-preview').innerHTML = '<img src="' + reader.result + '" alt="Foto de perfil" style="width:100%;height:100%;object-fit:cover;">';
-        }
-        if (file) {
-            reader.readAsDataURL(file);
-        }
-    }
-    
-    
-</script>
-
 
 
 
@@ -955,7 +1074,7 @@ function verificarDatos(event) {
     }
 }
 
-// Función para imprimir la página
+// Función para imprimir la página de Bienestar.
 function bienestarinstitucional() {
     window.print();
 }
@@ -968,31 +1087,20 @@ function bienestarinstitucional() {
 
 
 
-    
-    
-     <script>
-    
-            function displayFile() {
-                var input = document.getElementById('file-input');
-                var file = input.files[0];
-                if (file && file.type.startsWith('image/')) {
-                    var reader = new FileReader();
-                    reader.onload = function(e) {
-                        var img = document.getElementById('image-preview');
-                        img.src = e.target.result;
-                        img.style.display = 'block';
-                    };
-                    reader.readAsDataURL(file);
-                } else {
-                    document.getElementById('image-preview').style.display = 'none';
-                }
-            }
-    
-        </script>
-    
 
 
 
+
+
+
+
+
+
+
+
+ 
+
+    
 
 
 
