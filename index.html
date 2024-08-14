@@ -39,8 +39,8 @@
                 <p>SISTEMA DE GESTION DE CALIDAD</p>
             </center><br><br><br>
 
-
-            <label for="photo">Foto:</label>
+            
+   <label for="photo">Foto:</label>
             <div class="photo-placeholder" id="photo-preview"></div><br>
             <button class="button" onclick="showPhotoOptions(event)">Seleccionar foto</button>
             <input type="file" id="photo" name="photo" accept="image/*" capture="camera" onchange="previewPhoto()" style="display: none;">
@@ -48,7 +48,7 @@
             <div id="photo-options" style="display: none;">
                 <button class="button2" onclick="openCameraPhoto(event)">Cámara</button>
                 <button class="button2" onclick="openGalleryPhoto(event)">Selector de medios</button>
-                      <p style="color:red;">("Debe ser menos de 5MB por favor")</p>
+                <p style="color:red;">("Debe ser menos de 5MB por favor")</p>
             </div><br><br><br><br>
             
 
@@ -315,6 +315,7 @@
             
 
 
+
 <div class="file-input-container">
     <label for="file-input" class="file-input-label" onclick="showSignatureOptions(event)">Seleccionar firma</label>
     <div id="file-name" class="file-name"></div>
@@ -324,7 +325,7 @@
     <div id="signature-options" style="display: none;">
         <button class="button2" onclick="openCameraSignature(event)">Cámara</button>
         <button class="button2" onclick="openGallerySignature(event)">Selector de medios</button>
-              <p style="color:red;">("Debe ser menos de 5MB por favor")</p>
+        <p style="color:red;">("Debe ser menos de 5MB por favor")</p>
     </div>
     <input type="file" id="file-input" class="file-input" onchange="displaySignatureFile()" style="display: none;">
 </div>
