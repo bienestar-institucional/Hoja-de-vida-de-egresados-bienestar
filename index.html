@@ -23,16 +23,17 @@
 
         <center>
         <img src="https://i.postimg.cc/0rRDr5tq/logo-corporacion.png" width="30%" alt="Logo de la corporación">
-        <img src="https://i.postimg.cc/G2bcLWPS/logo-de-bienestar.png" width="40%" alt="Logo de bienestar">
+        <img src="http://imgfz.com/i/9jV4ecL.png" width="20%" alt="Logo de bienestar">
 
             <div id="letras2">
-                <h2>HOJA DE VIDA ÚNICA DE EGRESADOS</h2>
+                <h3>HOJA DE VIDA ÚNICA DE EGRESADOS</h3>
             </div>
             
 
             </center>
 
  
+      
         </center>
         <div class="section">
             <center>
@@ -54,6 +55,7 @@
 
 
 
+    
             <center>
                 <h4>DATOS PERSONALES:</h4>
             </center>
@@ -69,7 +71,7 @@
                     <option value="CC.">CC.</option>
                     <option value="Pte.">Pte.</option>
                     <option value="PPT.">PPT.</option>
-                </select><br><br>
+                </select>
             
                 <label for="document-number">Número de Documento:</label>
                 <input type="text" id="document-number" name="document-number" placeholder="Su número de documento" required 
@@ -108,7 +110,7 @@
 
             
 
-<div class="section">
+            <div class="section">
                 <h4>FORMACIÓN ACADÉMICA:</h4><br>
                 <label for="education-level">Nivel Académico:</label>
                 <select id="education-level" name="education-level">
@@ -120,10 +122,10 @@
                     <option value="Posgrado">Posgrado</option>
                 </select><br><br>
         
-                <label for="semesters">Semestres o Años:</label>
+                <label for="semesters">Semestres:</label>
                 <input type="text" id="semesters" name="semesters"><br><br>
         
-                <label for="year">Año:</label>
+                <label for="year">Años:</label>
                 <input type="text" id="year" name="year"><br><br><br><br>
 
 
@@ -142,6 +144,7 @@
 
 
  
+
 
 <div class="section">
     <h4>TITULO OBTENIDO:</h4>
@@ -197,9 +200,9 @@
 
 
 
-      <div class="section">
-            <h4>ESPECIFICA LA LENGUA QUE MANEJAS Y TU NIVEL (LEE, ESCRIBE Y HABLA)</h4><br><br>
-            <form id="lenguasForm">
+            <div class="section">
+                <h4>ESPECIFICA LA LENGUA QUE MANEJAS Y TU NIVEL (LEE, ESCRIBE Y HABLA)</h4><br><br>
+                <form id="lenguasForm">
                 <table>
                     <thead>
                         <tr>
@@ -244,22 +247,13 @@
                             <td><input type="radio" name="nivel-frances"></td>
                             <td><input type="radio" name="nivel-frances"></td>
                         </tr>
-                        <tr>
-                            <td>Otro</td>
-                            <td><input type="checkbox"></td>
-                            <td><input type="checkbox"></td>
-                            <td><input type="checkbox"></td>
-                            <td><input type="radio" name="nivel-otro"></td>
-                            <td><input type="radio" name="nivel-otro"></td>
-                            <td><input type="radio" name="nivel-otro"></td>
-                        </tr>
                     </tbody>
                 </table>
             </form>
-        </div><br><br>
+        </div><br>
       
       
-        <div id="letras">
+        <br><div id="letras">
             <h2 style="text-align: center; margin: 35px 0;">
                 EDUCACIÓN CONTINUA: formación complementaria para el fortalecimiento de competencias humanas y profesionales.
                 <br>Contempla seminarios, foros, congresos, diplomados y cursos.
@@ -297,47 +291,171 @@
                         <td><input type="date" name="fecha_seminario"></td>
                     </tr>
                 </tbody>
-            </table><br><br><br><br><br>
+            </table><br>
             
 
 
 
-            <title>Formulario de Experiencia Laboral</title>
 
 
-  <p class="ocultarloxd">¿Has tenido alguna experiencia laboral?</p>
-    <button id="yesButton" class="button">Sí</button>
-    <button id="noButton"class="button">No</button><br><br>
 
-    <div id="experienceForm">
-        <h4>EXPERIENCIA LABORAL O HUMANA:</h4><br>
+<!-- Primer Formulario -->
+<p class="ocultarloxd">¿Has tenido alguna experiencia laboral?</p>
+<button id="yesButton1" class="button">Sí</button>
+<button id="noButton1" class="button">No</button><br><br>
 
-        <label for="job1-title">Nombre de la Empresa:</label>
-        <input type="text" id="job1-title" name="job1-title"><br><br>
+<div id="experienceForm1" style="display:none;">
+    <h4>EXPERIENCIA LABORAL O HUMANA:</h4>
 
-        <label for="job1-company">Cargo que Ocupó:</label>
-        <input type="text" id="job1-company" name="job1-company"><br><br>
+    <label for="job1-title">Nombre de la Empresa:</label>
+    <input type="text" id="job1-title" name="job1-title"><br><br>
 
-        <label for="job1-date">Jefe Inmediato:</label>
-        <input type="text" id="job1-date" name="job1-date"><br><br>
+    <label for="job1-company">Cargo que Ocupó:</label>
+    <input type="text" id="job1-company" name="job1-company"><br><br>
 
-        <label for="job1-description">Tiempo que prestó el Servicio:</label>
-        <textarea id="job1-description" name="job1-description"></textarea><br><br>
+    <label for="job1-date">Jefe Inmediato:</label>
+    <input type="text" id="job1-date" name="job1-date"><br><br>
 
-        <label for="job2-title">Año en que lo Prestó:</label>
-        <input type="text" id="job2-title" name="job2-title"><br><br>
+    <label for="job1-description">Tiempo que prestó el Servicio:</label>
+    <textarea id="job1-description" name="job1-description"></textarea><br><br>
 
-        <label for="job2-company">Número de Contacto o Correo:</label>
-        <input type="text" id="job2-company" name="job2-company"><br><br>
+    <label for="job2-title">Año en que lo Prestó:</label>
+    <input type="text" id="job2-title" name="job2-title"><br><br>
+
+    <label for="job2-company">Número de Contacto o Correo:</label>
+    <input type="text" id="job2-company" name="job2-company"><br><br>
+</div><br><br>
+
+<!-- Segundo Formulario -->
+<div id="formSection2" style="display:none;">
+    <p class="ocultarloxd">¿Has tenido alguna otra experiencia laboral?</p>
+    <button id="yesButton2" class="button">Sí</button>
+    <button id="noButton2" class="button">No</button><br><br>
+
+    <div id="experienceForm2" style="display:none;">
+        <h4>EXPERIENCIA LABORAL O HUMANA:</h4>
+
+        <label for="job3-title">Nombre de la Empresa:</label>
+        <input type="text" id="job3-title" name="job3-title"><br><br>
+
+        <label for="job3-company">Cargo que Ocupó:</label>
+        <input type="text" id="job3-company" name="job3-company"><br><br>
+
+        <label for="job3-date">Jefe Inmediato:</label>
+        <input type="text" id="job3-date" name="job3-date"><br><br>
+
+        <label for="job3-description">Tiempo que prestó el Servicio:</label>
+        <textarea id="job3-description" name="job3-description"></textarea><br><br>
+
+        <label for="job4-title">Año en que lo Prestó:</label>
+        <input type="text" id="job4-title" name="job4-title"><br><br>
+
+        <label for="job4-company">Número de Contacto o Correo:</label>
+        <input type="text" id="job4-company" name="job4-company"><br><br>
     </div><br><br>
+</div>
+
+<!-- Tercer Formulario -->
+<div id="formSection3" style="display:none;">
+    <p class="ocultarloxd">¿Has tenido alguna otra experiencia laboral más?</p>
+    <button id="yesButton3" class="button">Sí</button>
+    <button id="noButton3" class="button">No</button><br><br>
+
+    <div id="experienceForm3" style="display:none;">
+        <h4>EXPERIENCIA LABORAL O HUMANA:</h4>
+
+        <label for="job5-title">Nombre de la Empresa:</label>
+        <input type="text" id="job5-title" name="job5-title"><br><br>
+
+        <label for="job5-company">Cargo que Ocupó:</label>
+        <input type="text" id="job5-company" name="job5-company"><br><br>
+
+        <label for="job5-date">Jefe Inmediato:</label>
+        <input type="text" id="job5-date" name="job5-date"><br><br>
+
+        <label for="job5-description">Tiempo que prestó el Servicio:</label>
+        <textarea id="job5-description" name="job5-description"></textarea><br><br>
+
+        <label for="job6-title">Año en que lo Prestó:</label>
+        <input type="text" id="job6-title" name="job6-title"><br><br>
+
+        <label for="job6-company">Número de Contacto o Correo:</label>
+        <input type="text" id="job6-company" name="job6-company"><br><br>
+    </div><br><br>
+</div>
+
+<!-- Cuarto Formulario -->
+<div id="formSection4" style="display:none;">
+    <p class="ocultarloxd">¿Has tenido alguna otra experiencia laboral adicional?</p>
+    <button id="yesButton4" class="button">Sí</button>
+    <button id="noButton4" class="button">No</button><br><br>
+
+    <div id="experienceForm4" style="display:none;">
+        <h4>EXPERIENCIA LABORAL O HUMANA:</h4>
+
+        <label for="job7-title">Nombre de la Empresa:</label>
+        <input type="text" id="job7-title" name="job7-title"><br><br>
+
+        <label for="job7-company">Cargo que Ocupó:</label>
+        <input type="text" id="job7-company" name="job7-company"><br><br>
+
+        <label for="job7-date">Jefe Inmediato:</label>
+        <input type="text" id="job7-date" name="job7-date"><br><br>
+
+        <label for="job7-description">Tiempo que prestó el Servicio:</label>
+        <textarea id="job7-description" name="job7-description"></textarea><br><br>
+
+        <label for="job8-title">Año en que lo Prestó:</label>
+        <input type="text" id="job8-title" name="job8-title"><br><br>
+
+        <label for="job8-company">Número de Contacto o Correo:</label>
+        <input type="text" id="job8-company" name="job8-company"><br><br>
+    </div><br><br>
+</div>
+
+<!-- Quinto Formulario -->
+<div id="formSection5" style="display:none;">
+    <p class="ocultarloxd">¿Has tenido alguna otra experiencia laboral más?</p>
+    <button id="yesButton5" class="button">Sí</button>
+    <button id="noButton5" class="button">No</button><br><br>
+
+    <div id="experienceForm5" style="display:none;">
+        <h4>EXPERIENCIA LABORAL O HUMANA:</h4>
+
+        <label for="job9-title">Nombre de la Empresa:</label>
+        <input type="text" id="job9-title" name="job9-title"><br><br>
+
+        <label for="job9-company">Cargo que Ocupó:</label>
+        <input type="text" id="job9-company" name="job9-company"><br><br>
+
+        <label for="job9-date">Jefe Inmediato:</label>
+        <input type="text" id="job9-date" name="job9-date"><br><br>
+
+        <label for="job9-description">Tiempo que prestó el Servicio:</label>
+        <textarea id="job9-description" name="job9-description"></textarea><br><br>
+
+        <label for="job10-title">Año en que lo Prestó:</label>
+        <input type="text" id="job10-title" name="job10-title"><br><br>
+
+        <label for="job10-company">Número de Contacto o Correo:</label>
+        <input type="text" id="job10-company" name="job10-company"><br><br>
+    </div><br><br>
+</div>
 
 
-    
 
 
 
-            <div class="section">
-                <h4>REFERENCIAS FAMILIARES:</h4><br>
+
+
+
+
+
+
+
+
+    <div class="section">
+        <h4>REFERENCIAS FAMILIARES:</h4><br>
             
                 <label for="job1-title">Tipo de vínculo o Relación:</label>
                 <input type="text" id="job1-title" name="job1-title"><br><br>
@@ -1073,29 +1191,110 @@ function openGallerySignature(event) {
 
 
   
+
+
+
+
 <script>
 
-    // Espera a que el contenido del DOM se cargue
-    document.addEventListener('DOMContentLoaded', function() {
-        // Obtén referencias a los botones y al formulario
-        const yesButton = document.getElementById('yesButton');
-        const noButton = document.getElementById('noButton');
-        const experienceForm = document.getElementById('experienceForm');
 
-        // Muestra el formulario al hacer clic en "Sí"
-        yesButton.addEventListener('click', function(event) {
-            event.preventDefault(); // Previene el comportamiento por defecto del botón
-            experienceForm.style.display = 'block';
-        });
+document.addEventListener('DOMContentLoaded', function() {
+    // Primer formulario
+    const yesButton1 = document.getElementById('yesButton1');
+    const noButton1 = document.getElementById('noButton1');
+    const experienceForm1 = document.getElementById('experienceForm1');
+    const formSection2 = document.getElementById('formSection2');
 
-        // Oculta el formulario al hacer clic en "No"
-        noButton.addEventListener('click', function(event) {
-            event.preventDefault(); // Previene el comportamiento por defecto del botón
-            experienceForm.style.display = 'none';
-        });
+    yesButton1.addEventListener('click', function(event) {
+        event.preventDefault();
+        experienceForm1.style.display = 'block';
+        formSection2.style.display = 'block'; // Muestra el siguiente conjunto de botones
     });
 
-</script>
+    noButton1.addEventListener('click', function(event) {
+        event.preventDefault();
+        experienceForm1.style.display = 'none';
+        formSection2.style.display = 'none'; // Oculta el siguiente conjunto de botones si se elige "No"
+    });
+
+    // Segundo formulario
+    const yesButton2 = document.getElementById('yesButton2');
+    const noButton2 = document.getElementById('noButton2');
+    const experienceForm2 = document.getElementById('experienceForm2');
+    const formSection3 = document.getElementById('formSection3');
+
+    yesButton2.addEventListener('click', function(event) {
+        event.preventDefault();
+        experienceForm2.style.display = 'block';
+        formSection3.style.display = 'block';
+    });
+
+    noButton2.addEventListener('click', function(event) {
+        event.preventDefault();
+        experienceForm2.style.display = 'none';
+        formSection3.style.display = 'none';
+    });
+
+    // Tercer formulario
+    const yesButton3 = document.getElementById('yesButton3');
+    const noButton3 = document.getElementById('noButton3');
+    const experienceForm3 = document.getElementById('experienceForm3');
+    const formSection4 = document.getElementById('formSection4');
+
+    yesButton3.addEventListener('click', function(event) {
+        event.preventDefault();
+        experienceForm3.style.display = 'block';
+        formSection4.style.display = 'block';
+    });
+
+    noButton3.addEventListener('click', function(event) {
+        event.preventDefault();
+        experienceForm3.style.display = 'none';
+        formSection4.style.display = 'none';
+    });
+
+    // Cuarto formulario
+    const yesButton4 = document.getElementById('yesButton4');
+    const noButton4 = document.getElementById('noButton4');
+    const experienceForm4 = document.getElementById('experienceForm4');
+    const formSection5 = document.getElementById('formSection5');
+
+    yesButton4.addEventListener('click', function(event) {
+        event.preventDefault();
+        experienceForm4.style.display = 'block';
+        formSection5.style.display = 'block';
+    });
+
+    noButton4.addEventListener('click', function(event) {
+        event.preventDefault();
+        experienceForm4.style.display = 'none';
+        formSection5.style.display = 'none';
+    });
+
+    // Quinto formulario
+    const yesButton5 = document.getElementById('yesButton5');
+    const noButton5 = document.getElementById('noButton5');
+    const experienceForm5 = document.getElementById('experienceForm5');
+
+    yesButton5.addEventListener('click', function(event) {
+        event.preventDefault();
+        experienceForm5.style.display = 'block';
+    });
+
+    noButton5.addEventListener('click', function(event) {
+        event.preventDefault();
+        experienceForm5.style.display = 'none';
+    });
+});
+
+  </script>
+
+
+
+
+
+
+
 
 
 
